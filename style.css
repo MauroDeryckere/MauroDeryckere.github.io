@@ -33,6 +33,11 @@ body {
     overflow-x: hidden
 }
 
+.link
+{
+    color: #14efe1;
+}
+
 #backtotopbutton article,
 :root {
     font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif
