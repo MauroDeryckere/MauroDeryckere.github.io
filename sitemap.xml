@@ -2,33 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://mauroderyckere.github.io</loc>
-        <lastmod>2025-23-04</lastmod>
-        <changefreq>always</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <!--TODO add projects here-->
-    <!-- <url>
-        <loc>https://mauroderyckere.github.io/AXOCEAN</loc>
-        <lastmod>2024-03-08</lastmod>
-        <changefreq>always</changefreq>
+        <lastmod>2025-01-05</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://mauroderyckere.github.io/Pexelicons</loc>
-        <lastmod>2024-03-08</lastmod>
-        <changefreq>always</changefreq>
+        <loc>https://github.com/Howest-DAE-GD/MauEng</loc>
+        <lastmod>2024-01-05</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
-    <url>
-        <loc>https://mauroderyckere.github.io/Aquaregia</loc>
-        <lastmod>2024-03-08</lastmod>
-        <changefreq>always</changefreq>
+        <url>
+        <loc>https://github.com/MauroDeryckere/NES-Maze-Crusade</loc>
+        <lastmod>2024-01-05</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
-    <url>
-        <loc>https://mauroderyckere.github.io/QR-Generator</loc>
-        <lastmod>2024-03-08</lastmod>
-        <changefreq>always</changefreq>
+        <url>
+        <loc>https://github.com/MauroDeryckere/2D-Flowfield-Research-Project</loc>
+        <lastmod>2024-01-05</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.5</priority>
-    </url> -->
+    </url>
+        <url>
+        <loc>https://mauroderyckere.itch.io/bumpurr</loc>
+        <lastmod>2024-01-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
 </urlset>
