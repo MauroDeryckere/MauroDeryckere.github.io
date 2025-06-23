@@ -24,8 +24,14 @@
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
-        <url>
+    <url>
         <loc>https://mauroderyckere.itch.io/bumpurr</loc>
+        <lastmod>2024-01-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://github.com/MauroDeryckere/UUID</loc>
         <lastmod>2024-01-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
