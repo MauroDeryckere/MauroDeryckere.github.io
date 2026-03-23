@@ -1708,6 +1708,10 @@ footer {
         overflow: hidden
     }
 
+    .stopscrolling::-webkit-scrollbar {
+        display: none
+    }
+
     .hamburger {
         position: fixed;
         top: 0;
@@ -1782,36 +1786,38 @@ footer {
     }
 
     .mobiletogglemenu {
-        background-color: transparent;
         z-index: 9990;
         height: 100%;
         width: 100%;
         position: fixed;
         top: 0;
-        right: 0;
+        left: 0;
         list-style: none;
         font-size: 2rem;
         cursor: pointer;
         display: flex;
-        transform: translate(1000px);
-        transition-duration: 1s
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .4s ease, visibility .4s ease;
+        overscroll-behavior: none;
+        touch-action: none
     }
 
     .show-toggle-menu {
-        transform: translate(0);
-        transition-duration: .6s
+        opacity: 1;
+        visibility: visible
     }
 
     .mobile-navbar-tabs-ul {
-        background-color: var(--color-dark-mode);
+        background-color: rgba(17, 17, 27, .85);
+        backdrop-filter: blur(20px);
         width: 100%;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 70px;
-        box-shadow: 0 0 30px rgba(0, 0, 0, .176)
+        gap: 50px
     }
 
     .mobile-navbar-tabs-li {
@@ -1823,9 +1829,22 @@ footer {
         font-weight: 600;
         position: relative;
         cursor: pointer;
-        font-family: fira code;
-        width: fit-content
+        font-family: "Fira Code";
+        width: fit-content;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity .3s ease, transform .3s ease
     }
+
+    .show-toggle-menu .mobile-navbar-tabs-li {
+        opacity: 1;
+        transform: translateY(0)
+    }
+
+    .show-toggle-menu .mobile-navbar-tabs-li:nth-child(1) { transition-delay: .1s }
+    .show-toggle-menu .mobile-navbar-tabs-li:nth-child(2) { transition-delay: .2s }
+    .show-toggle-menu .mobile-navbar-tabs-li:nth-child(3) { transition-delay: .3s }
+    .show-toggle-menu .mobile-navbar-tabs-li:nth-child(4) { transition-delay: .4s }
 
     .mobile-navbar-tabs-li a {
         padding: 15px 20px;
