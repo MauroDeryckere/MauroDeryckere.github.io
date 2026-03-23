@@ -250,12 +250,20 @@
           </h2>
           <p class="sectionHeadingP"></p>
         </div>
+        <div class="project-filter-bar" data-aos="fade-up">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="engine">Engine</button>
+          <button class="filter-btn" data-filter="cpp">C++</button>
+          <button class="filter-btn" data-filter="games">Games</button>
+          <button class="filter-btn" data-filter="research">Research</button>
+        </div>
         <div class="project-boxes-div">
-          <div class="project-box-wrapper" data-aos="fade-up" >
+          <div class="project-box-wrapper" data-category="engine cpp">
             <div class="project-box project-box1" id="project-box1">
               <div class="info-div">
                 <img src="src/ico/loading.ico" alt="Loading favicon" class="faviconforProjectAquaregia" />
                 <h3 class="ProjectHeading">MauEng - 3D Game Engine</h3>
+                <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Vulkan</span><span class="project-tag">Engine</span></div>
                 <p class="ProjectDescription">
                   A custom 3D game engine built from scratch with C++ and Vulkan. Features a deferred rendering pipeline with instanced draw calls, debug shape rendering, a custom event system, and a configurable input system with action-to-keybind mapping.
                 </p>
@@ -286,11 +294,12 @@
           </div>
           <!-- PROJECT END -->
 
-          <div class="project-box-wrapper" data-aos="fade-up" >
+          <div class="project-box-wrapper" data-category="games">
             <div class="project-box project-box2" id="project-box2">
               <div class="info-div">
                 <img src="src/png/check-mark.png" alt="Done favicon" class="faviconforProject" />
                 <h3 class="ProjectHeading">Maze Crusade</h3>
+                <div class="project-tags"><span class="project-tag">Assembly 6502</span><span class="project-tag">NES</span><span class="project-tag">Game</span></div>
                 <p class="ProjectDescription">
                   A game written entirely in Assembly 6502 for the NES that runs on real hardware. Implements maze generation (Prim's algorithm) and two solving algorithms (BFS and left-hand rule), all within the NES's 2KB RAM constraint.
                 </p>
@@ -321,11 +330,12 @@
           </div>
           <!-- PROJECT END -->
 
-          <div class="project-box-wrapper" data-aos="fade-up" >
+          <div class="project-box-wrapper" data-category="research cpp">
             <div class="project-box project-box3" id="project-box-flowfield">
               <div class="info-div">
                 <img src="src/ico/loading.ico" alt="Loading favicon" class="faviconforProjectAquaregia" />
                 <h3 class="ProjectHeading">Flowfield Pathfinding</h3>
+                <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Research</span></div>
                 <p class="ProjectDescription">
                   A research project into scalable crowd pathfinding using flowfields. This approach efficiently handles large numbers of agents by computing a single shared flow field per destination, making it easy to assign terrain costs for specific unit types.
                 </p>
@@ -357,11 +367,12 @@
           </div>
           <!-- PROJECT END -->
 
-          <div class="project-box-wrapper" data-aos="fade-up" >
+          <div class="project-box-wrapper" data-category="games cpp">
             <div class="project-box project-box4" id="project-box4">
               <div class="info-div">
                 <img src="src/png/check-mark.png" alt="Done favicon" class="faviconforProject" />
                 <h3 class="ProjectHeading">Bumpurr Cars</h3>
+                <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Unreal Engine</span><span class="project-tag">Game</span></div>
                 <p class="ProjectDescription">
                   An Unreal Engine game built in a team of 3 programmers and 3 artists. I developed the score system, hazard system, power-up spawning, and arcade-style physics/collisions. All systems were built in C++ with Blueprint-exposed parameters for easy designer iteration.
                 </p>
@@ -398,11 +409,12 @@
           </div>
           <!-- PROJECT END -->
 
-          <div class="project-box-wrapper" data-aos="fade-up" >
+          <div class="project-box-wrapper" data-category="engine cpp">
             <div class="project-box project-box5" id="project-box-profiler">
               <div class="info-div">
                 <img src="src/png/check-mark.png" alt="Done favicon" class="faviconforProject" />
                 <h3 class="ProjectHeading">Profiler Library</h3>
+                <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Library</span><span class="project-tag">Engine</span></div>
                 <p class="ProjectDescription">
                   A lightweight, cross-platform C++ profiling library designed to minimize measurement overhead. Supports multi-threaded profiling with output compatible with both Optick and Google Trace for visualization.
                 </p>
@@ -433,11 +445,12 @@
           </div>
           <!-- PROJECT END -->
 
-          <div class="project-box-wrapper" data-aos="fade-up" >
+          <div class="project-box-wrapper" data-category="engine cpp">
             <div class="project-box project-box6" id="project-box-uuid">
               <div class="info-div">
                 <img src="src/png/check-mark.png" alt="Done favicon" class="faviconforProject" />
                 <h3 class="ProjectHeading">UUID Library</h3>
+                <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Library</span><span class="project-tag">Engine</span></div>
                 <p class="ProjectDescription">
                   A C++ UUID generation library implementing RFC 4122. Provides unique identifiers for entities, resources, and objects in engine and application code.
                 </p>
@@ -469,7 +482,8 @@
           <!-- PROJECT END -->
 
 
-        </div>        
+        </div>
+        <button class="show-more-btn" id="show-more-btn">Show More</button>
       </div>
     </section>
 
@@ -651,14 +665,54 @@
       });
     });
   </script>
- <!-- <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-<script>
-  kofiWidgetOverlay.draw('mauroderyckere', {
-    'type': 'floating-chat',
-    'floating-chat.donateButton.text': 'Support me',
-    'floating-chat.donateButton.background-color': '#794bc4',
-    'floating-chat.donateButton.text-color': '#fff'
-  });
-</script> -->
+  <script>
+    (function() {
+      const INITIAL_VISIBLE = 3;
+      const projects = document.querySelectorAll(".project-box-wrapper");
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const showMoreBtn = document.getElementById("show-more-btn");
+      let currentFilter = "all";
+      let showingAll = false;
+
+      function getFiltered() {
+        if (currentFilter === "all") return [...projects];
+        return [...projects].filter(function(p) {
+          return p.dataset.category.split(" ").indexOf(currentFilter) !== -1;
+        });
+      }
+
+      function render() {
+        var filtered = getFiltered();
+        projects.forEach(function(p) { p.classList.add("hidden"); });
+        var limit = showingAll ? filtered.length : Math.min(INITIAL_VISIBLE, filtered.length);
+        for (var i = 0; i < limit; i++) {
+          filtered[i].classList.remove("hidden");
+        }
+        if (filtered.length > INITIAL_VISIBLE && !showingAll) {
+          showMoreBtn.classList.add("visible");
+          showMoreBtn.textContent = "Show More (" + (filtered.length - INITIAL_VISIBLE) + ")";
+        } else {
+          showMoreBtn.classList.remove("visible");
+        }
+      }
+
+      filterBtns.forEach(function(btn) {
+        btn.addEventListener("click", function() {
+          filterBtns.forEach(function(b) { b.classList.remove("active"); });
+          btn.classList.add("active");
+          currentFilter = btn.dataset.filter;
+          showingAll = false;
+          render();
+        });
+      });
+
+      showMoreBtn.addEventListener("click", function() {
+        showingAll = true;
+        render();
+      });
+
+      render();
+    })();
+  </script>
 </body>
 </html>
