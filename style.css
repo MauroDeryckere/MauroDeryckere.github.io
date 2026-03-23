@@ -1141,7 +1141,8 @@ noscript {
     transition-duration: .2s;
     pointer-events: none;
     letter-spacing: .5px;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+    white-space: nowrap;
     backdrop-filter: blur(5px);
     font-weight: 500
 }
