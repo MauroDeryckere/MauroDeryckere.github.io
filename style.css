@@ -1016,7 +1016,7 @@ noscript {
 }
 
 .about-info p {
-    line-height: 25px
+    line-height: 1.6
 }
 
 .dp {
@@ -1115,7 +1115,13 @@ noscript {
     justify-content: center;
     border-radius: 30px;
     border: 1px solid var(--tech-stack-box-border-color);
-    position: relative
+    position: relative;
+    transition: transform .25s ease, border-color .25s ease
+}
+
+.tech-stack-box:hover {
+    transform: scale(1.05);
+    border-color: rgba(128, 0, 255, 0.4)
 }
 
 .tech-stack-box img {
@@ -1129,7 +1135,7 @@ noscript {
 
 .tooltip {
     position: absolute;
-    top: -20px;
+    bottom: calc(100% + 10px);
     opacity: 0;
     background: linear-gradient(to bottom right, var(--tech-stack-box-first-color), var(--tech-stack-box-second-color));
     border: 1px solid var(--tech-stack-box-border-color);
@@ -1345,8 +1351,7 @@ footer {
 }
 
 #backtotopbutton:hover {
-    transform: translate(0, -20px);
-    text-decoration: line-through var(--color-white)
+    transform: translate(0, -20px)
 }
 
 footer {
@@ -1410,7 +1415,12 @@ footer {
 }
 
 .two-words article {
-    font-size: 3rem
+    font-size: 4rem;
+    font-weight: 700;
+    background: linear-gradient(-45deg, var(--color-light-blue), var(--color-light-purple));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
 }
 
 .social-media-container {
@@ -1473,7 +1483,7 @@ footer {
 .social-media-container a:hover {
     box-shadow: 0 0 50px 100px #8000ff inset;
     transition-duration: 1s;
-    border: none
+    border-color: #8000ff
 }
 
 .social-media-container a::before {
