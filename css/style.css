@@ -1930,6 +1930,10 @@ footer {
         width: 100%
     }
 
+    .info-div {
+        padding: 30px 30px 10px
+    }
+
     .image-div {
         max-width: 100%;
         padding: 0 20px 20px 20px
