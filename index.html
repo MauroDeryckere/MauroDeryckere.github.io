@@ -253,17 +253,19 @@
         <div class="project-filter-bar" data-aos="fade-up">
           <button class="filter-btn active" data-filter="all">All</button>
           <button class="filter-btn" data-filter="engine">Engine</button>
+          <button class="filter-btn" data-filter="graphics">Graphics</button>
           <button class="filter-btn" data-filter="cpp">C++</button>
+          <button class="filter-btn" data-filter="unreal">Unreal Engine</button>
           <button class="filter-btn" data-filter="games">Games</button>
           <button class="filter-btn" data-filter="research">Research</button>
         </div>
         <div class="project-boxes-div">
-          <div class="project-box-wrapper" data-category="engine cpp">
+          <div class="project-box-wrapper" data-category="engine graphics cpp">
             <div class="project-box project-box1" id="project-box1">
               <div class="info-div">
                 <img src="src/ico/loading.ico" alt="Loading favicon" class="faviconforProjectAquaregia" />
                 <h3 class="ProjectHeading">MauEng - 3D Game Engine</h3>
-                <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Vulkan</span><span class="project-tag">Engine</span></div>
+                <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Vulkan</span><span class="project-tag">Engine</span><span class="project-tag">Graphics</span><span class="project-tag">CMake</span></div>
                 <p class="ProjectDescription">
                   A custom 3D game engine built from scratch with C++ and Vulkan. Features a deferred rendering pipeline with instanced draw calls, debug shape rendering, a custom event system, and a configurable input system with action-to-keybind mapping.
                 </p>
@@ -299,7 +301,7 @@
               <div class="info-div">
                 <img src="src/png/check-mark.png" alt="Done favicon" class="faviconforProject" />
                 <h3 class="ProjectHeading">Maze Crusade</h3>
-                <div class="project-tags"><span class="project-tag">Assembly 6502</span><span class="project-tag">NES</span><span class="project-tag">Game</span></div>
+                <div class="project-tags"><span class="project-tag">Assembly 6502</span><span class="project-tag">NES</span><span class="project-tag">Game</span><span class="project-tag">Low-Level</span></div>
                 <p class="ProjectDescription">
                   A game written entirely in Assembly 6502 for the NES that runs on real hardware. Implements maze generation (Prim's algorithm) and two solving algorithms (BFS and left-hand rule), all within the NES's 2KB RAM constraint.
                 </p>
@@ -335,7 +337,7 @@
               <div class="info-div">
                 <img src="src/ico/loading.ico" alt="Loading favicon" class="faviconforProjectAquaregia" />
                 <h3 class="ProjectHeading">Flowfield Pathfinding</h3>
-                <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Research</span></div>
+                <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Research</span><span class="project-tag">Gameplay Programming</span></div>
                 <p class="ProjectDescription">
                   A research project into scalable crowd pathfinding using flowfields. This approach efficiently handles large numbers of agents by computing a single shared flow field per destination, making it easy to assign terrain costs for specific unit types.
                 </p>
@@ -367,12 +369,12 @@
           </div>
           <!-- PROJECT END -->
 
-          <div class="project-box-wrapper" data-category="games cpp">
+          <div class="project-box-wrapper" data-category="games cpp unreal">
             <div class="project-box project-box4" id="project-box4">
               <div class="info-div">
                 <img src="src/png/check-mark.png" alt="Done favicon" class="faviconforProject" />
                 <h3 class="ProjectHeading">Bumpurr Cars</h3>
-                <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Unreal Engine</span><span class="project-tag">Game</span></div>
+                <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Unreal Engine</span><span class="project-tag">Blueprints</span><span class="project-tag">Game</span><span class="project-tag">Perforce</span></div>
                 <p class="ProjectDescription">
                   An Unreal Engine game built in a team of 3 programmers and 3 artists. I developed the score system, hazard system, power-up spawning, and arcade-style physics/collisions. All systems were built in C++ with Blueprint-exposed parameters for easy designer iteration.
                 </p>
@@ -414,7 +416,7 @@
               <div class="info-div">
                 <img src="src/png/check-mark.png" alt="Done favicon" class="faviconforProject" />
                 <h3 class="ProjectHeading">Profiler Library</h3>
-                <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Library</span><span class="project-tag">Engine</span></div>
+                <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Library</span><span class="project-tag">Cross-Platform</span><span class="project-tag">CMake</span></div>
                 <p class="ProjectDescription">
                   A lightweight, cross-platform C++ profiling library designed to minimize measurement overhead. Supports multi-threaded profiling with output compatible with both Optick and Google Trace for visualization.
                 </p>
@@ -450,7 +452,7 @@
               <div class="info-div">
                 <img src="src/png/check-mark.png" alt="Done favicon" class="faviconforProject" />
                 <h3 class="ProjectHeading">UUID Library</h3>
-                <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Library</span><span class="project-tag">Engine</span></div>
+                <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">Library</span><span class="project-tag">CMake</span></div>
                 <p class="ProjectDescription">
                   A C++ UUID generation library implementing RFC 4122. Provides unique identifiers for entities, resources, and objects in engine and application code.
                 </p>
@@ -694,6 +696,7 @@
         } else {
           showMoreBtn.classList.remove("visible");
         }
+        if (typeof AOS !== "undefined") AOS.refresh();
       }
 
       filterBtns.forEach(function(btn) {
