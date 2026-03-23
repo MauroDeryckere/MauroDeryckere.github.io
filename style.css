@@ -33,9 +33,17 @@ body {
     overflow-x: hidden
 }
 
-.link
-{
+.link {
     color: #14efe1;
+}
+
+.light-mode .link {
+    color: #0a8f87;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-purple);
+    outline-offset: 3px
 }
 
 #backtotopbutton article,
@@ -123,7 +131,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-    background: #0a0a10
+    background: var(--color-dark-mode)
 }
 
 ::-webkit-scrollbar-thumb {
@@ -139,7 +147,7 @@ html {
 .cursor-outer {
     width: 35px;
     height: 35px;
-    border: 2px solid #fff
+    border: 2px solid var(--color-white)
 }
 
 .cursor-inner,
@@ -825,10 +833,15 @@ noscript {
     border: none;
     border-radius: 7px;
     backdrop-filter: blur(5px);
-    color: var(--color-black);
+    color: #000;
     align-items: center;
     justify-content: center;
     letter-spacing: .8px
+}
+
+.light-mode .letsTalkBtn-text {
+    background-color: rgba(30, 30, 30, .466);
+    color: #fff
 }
 
 .cta:hover span,
@@ -1253,10 +1266,14 @@ footer {
 }
 
 .ProjectDescription {
-    color: #a8a8b3;
+    color: #b4b4bf;
     font-size: 1.7rem;
     font-weight: 400;
     line-height: 1.5
+}
+
+.light-mode .ProjectDescription {
+    color: #4a4a55
 }
 
 .project-buttons {
@@ -1370,7 +1387,7 @@ footer {
 .footer-background {
     width: 100%;
     height: 50vh;
-    background-color: #0b0b0b;
+    background-color: var(--color-dark-mode);
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -1447,7 +1464,7 @@ footer {
     text-decoration: none;
     padding: 10px;
     border-radius: 50%;
-    border: 2px solid #e2dede;
+    border: 2px solid var(--color-gray);
     position: relative;
     box-shadow: 0 0 0 #8000ff inset;
     transition-duration: .3s
@@ -1580,7 +1597,7 @@ footer {
 }
 
 .footer-bottom {
-    background-color: #0b0b0b;
+    background-color: var(--color-dark-mode);
     width: 100%;
     display: flex;
     align-items: center;
