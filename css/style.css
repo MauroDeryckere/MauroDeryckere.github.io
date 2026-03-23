@@ -159,7 +159,7 @@ html {
     width: 25px;
     height: 25px;
     transition: .2s;
-    mix-blend-mode: difference
+    opacity: .5
 }
 
 .cursor-outer.hover {
