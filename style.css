@@ -197,9 +197,10 @@ html {
     --static-heading-gradient-blue: #0f7878;
     --static-heading-gradient-pink: #f09bb9;
     --color-shadowDark: #e2ddd7;
-    --tech-stack-box-first-color: #e7e2db;
+    --tech-stack-box-first-color: #f5f0ea;
     --tech-stack-box-second-color: #ece7e100;
-    --tech-stack-box-border-color: #dad5cf
+    --tech-stack-box-border-color: #c8c3bd;
+    --color-gray: #555
 }
 
 .setting-container {
@@ -714,6 +715,10 @@ noscript {
     margin: 0 12px 0 0
 }
 
+.jello {
+    display: inline-block
+}
+
 .jello:hover {
     background-clip: text;
     -webkit-background-clip: text;
@@ -836,7 +841,8 @@ noscript {
     color: #000;
     align-items: center;
     justify-content: center;
-    letter-spacing: .8px
+    letter-spacing: .8px;
+    font-size: 1.6rem
 }
 
 .light-mode .letsTalkBtn-text {
@@ -1252,11 +1258,15 @@ footer {
 }
 
 .image-div img {
-    width: 100%;  
+    width: 100%;
     height: auto;
-    text-align: right;
     border-top-left-radius: 30px;
     display: block;
+}
+
+.image-div iframe {
+    border: none;
+    border-top-left-radius: 30px
 }
 
 .ProjectHeading {
