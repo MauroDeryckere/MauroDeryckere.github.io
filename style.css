@@ -173,13 +173,27 @@ html {
     content: "";
     position: absolute;
     display: block;
-    background-color: var(--color-purple);
     height: 3px;
-    width: 100%;
     bottom: -5px;
     left: 0;
-    border-radius: 2px;
-    transition: width .2s ease
+    border-radius: 2px
+}
+
+.activeThistab:before {
+    background-color: var(--color-purple);
+    width: 100%
+}
+
+.navbar-tabs-ul li:hover:before {
+    background-color: var(--color-white);
+    width: 100%;
+    opacity: .3;
+    transition: opacity .2s ease
+}
+
+.navbar-tabs-ul li.activeThistab:hover:before {
+    background-color: var(--color-purple);
+    opacity: 1
 }
 
 .setting-container {
@@ -1855,12 +1869,18 @@ footer {
         content: "";
         position: absolute;
         display: block;
-        background-color: var(--color-purple);
+        background-color: var(--color-white);
+        opacity: .3;
         height: 3px;
         width: 100%;
         bottom: -5px;
         left: 0;
         border-radius: 2px
+    }
+
+    .mobile-navbar-tabs-li.activeThismobiletab:hover:before {
+        background-color: var(--color-purple);
+        opacity: 1
     }
 
     .about-info,
