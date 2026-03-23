@@ -212,7 +212,7 @@ html {
     align-items: center;
     justify-content: center;
     padding: 0 20px;
-    background-image: url(src/svg/settings-svgrepo-com.svg);
+    background-image: url(../assets/icons/settings.svg);
     transition-duration: .5s;
     cursor: pointer
 }
@@ -270,14 +270,14 @@ html {
     position: relative;
     justify-content: center;
     width: 40px;
-    background-image: url(src/svg/Mute_Icon.svg);
+    background-image: url(../assets/icons/mute.svg);
     cursor: pointer;
     transition-duration: .5s
 }
 
 #switchforsound:checked+#labelforsound {
     transition-duration: .5s;
-    background-image: url(src/svg/Speaker_Icon.svg);
+    background-image: url(../assets/icons/speaker.svg);
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center
@@ -297,7 +297,7 @@ header {
     z-index: 99999;
     justify-content: center;
     overflow-y: hidden;
-    background-image: url(src/svg/Pulse-0.4s-200px.svg);
+    background-image: url(../assets/icons/preloader-spinner.svg);
     background-size: 10%
 }
 
