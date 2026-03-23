@@ -677,7 +677,7 @@
       const filterBtns = document.querySelectorAll(".filter-btn");
       const showMoreBtn = document.getElementById("show-more-btn");
       let currentFilter = "all";
-      let showingAll = false;
+      let visibleCount = INITIAL_VISIBLE;
 
       function getFiltered() {
         if (currentFilter === "all") return [...projects];
@@ -689,13 +689,14 @@
       function render() {
         var filtered = getFiltered();
         projects.forEach(function(p) { p.classList.add("hidden"); });
-        var limit = showingAll ? filtered.length : Math.min(INITIAL_VISIBLE, filtered.length);
+        var limit = Math.min(visibleCount, filtered.length);
         for (var i = 0; i < limit; i++) {
           filtered[i].classList.remove("hidden");
         }
-        if (filtered.length > INITIAL_VISIBLE && !showingAll) {
+        var remaining = filtered.length - limit;
+        if (remaining > 0) {
           showMoreBtn.classList.add("visible");
-          showMoreBtn.textContent = "Show More (" + (filtered.length - INITIAL_VISIBLE) + ")";
+          showMoreBtn.textContent = "Show More (" + remaining + ")";
         } else {
           showMoreBtn.classList.remove("visible");
         }
@@ -707,13 +708,13 @@
           filterBtns.forEach(function(b) { b.classList.remove("active"); });
           btn.classList.add("active");
           currentFilter = btn.dataset.filter;
-          showingAll = false;
+          visibleCount = INITIAL_VISIBLE;
           render();
         });
       });
 
       showMoreBtn.addEventListener("click", function() {
-        showingAll = true;
+        visibleCount += INITIAL_VISIBLE;
         render();
       });
 
