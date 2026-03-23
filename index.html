@@ -266,12 +266,12 @@
             <div class="project-box project-box1" id="project-box1">
               <div class="info-div">
                 <img src="src/ico/loading.ico" alt="Loading favicon" class="faviconforProjectAquaregia" />
-                <article class="ProjectHeading">3D Game Engine</article>
+                <article class="ProjectHeading">MauEng - 3D Game Engine</article>
                 <p class="ProjectDescription">
-                  A 3D Game Engine focused on rendering techniques with Vulkan, and modern (C++) engine programming patterns. I still actively work on this project to learn more about engine architecture, rendering techniques, and multi-threaded systems.
+                  A custom 3D game engine built from scratch with C++ and Vulkan. Features a deferred rendering pipeline with instanced draw calls, debug shape rendering, a custom event system, and a configurable input system with action-to-keybind mapping.
                 </p>
                 <p class="ProjectDescription">
-                  The engine has a rendering pipeline that supports deferred rendering with instancing and debug rendering (rendering shapes), a custom event system, an input system that supports mapping actions to keybinds, and more.
+                  Actively developed as my primary project for exploring engine architecture, multi-threaded systems, and GPU programming. Profiled and optimized using my custom Profiler library.
                 </p>
                   <div class="project-buttons">
                   <a href="https://github.com/MauroDeryckere/MauEng" target="_blank" class="cta"
@@ -303,10 +303,10 @@
                 <img src="src/png/check-mark.png" alt="Done favicon" class="faviconforProject" />
                 <article class="ProjectHeading">Maze Crusade</article>
                 <p class="ProjectDescription">
-                  This is an Assembly 6502 game made for the NES, and it runs on the actual hardware! The project contains a maze generation algorithm (Prim's) and 2 solving algorithms (BFS and left-hand rule).
+                  A game written entirely in Assembly 6502 for the NES that runs on real hardware. Implements maze generation (Prim's algorithm) and two solving algorithms (BFS and left-hand rule), all within the NES's 2KB RAM constraint.
                 </p>
                 <p class="ProjectDescription">
-                  This project has taught me a lot about low-level programming. This includes (manual) memory management through creating data structures and algorithms, adapting code to fit the NES memory constraints, and understanding the limitations of the NES hardware.
+                  Built custom data structures and algorithms from scratch with manual memory management, no standard library, and no high-level abstractions. Pure low-level programming against real hardware limitations.
                 </p>
                 <div class="project-buttons">
                   <a href="https://github.com/MauroDeryckere/NES-Maze-Crusade" target="_blank" class="cta"
@@ -338,10 +338,10 @@
                 <img src="src/ico/loading.ico" alt="Loading favicon" class="faviconforProjectAquaregia" />
                 <article class="ProjectHeading">Flowfield Pathfinding</article>
                 <p class="ProjectDescription">
-                  A gameplay programming research project. I researched how to make pathfinding in games with big crowds more optimal using flowfields. This approach makes giving terrain a cost for specific unit types very easy and can easily be combined with different steering behaviours to make the movement look more natural.
-                </p> 
+                  A research project into scalable crowd pathfinding using flowfields. This approach efficiently handles large numbers of agents by computing a single shared flow field per destination, making it easy to assign terrain costs for specific unit types.
+                </p>
                 <p class="ProjectDescription">
-                  I will continue this project in the near future to further optimize the algorithm, and clean the code up. Additionally I would like to test this in 3D (using my 3D engine project).
+                  Planned next steps: a general refactor, adding support for steering behaviours, and implementing the system into game engines including MauEng.
                 </p> 
 
                 <div class="project-buttons">
@@ -374,10 +374,10 @@
                 <img src="src/png/check-mark.png" alt="Done favicon" class="faviconforProject" />
                 <article class="ProjectHeading">Bumpurr Cars</article>
                 <p class="ProjectDescription">
-                  A game made in Unreal Engine with 2 other programmers and 3 artists. I was responsible for prototyping, creating the score system, hazard system, power-up spawn system, and physics (arcadey collisions). The different systems were made in C++ and Blueprints and are easily customizable in the editor.
-                </p> 
+                  An Unreal Engine game built in a team of 3 programmers and 3 artists. I developed the score system, hazard system, power-up spawning, and arcade-style physics/collisions. All systems were built in C++ with Blueprint-exposed parameters for easy designer iteration.
+                </p>
                 <p class="ProjectDescription">
-                  As this was a group project, it also refined my soft skills (planning, working in a team, testing tasks). The source control for this project was via Perforce.
+                  Team collaboration via Perforce with structured planning and task tracking.
                 </p> 
                 <div class="project-buttons">
                   <a href="https://mauroderyckere.itch.io/bumpurrcars" target="_blank" class="cta"
@@ -416,10 +416,10 @@
                 <img src="src/png/check-mark.png" alt="Done favicon" class="faviconforProject" />
                 <article class="ProjectHeading">Profiler Library</article>
                 <p class="ProjectDescription">
-                  A C++ library to profile your code.
-                </p> 
+                  A lightweight, cross-platform C++ profiling library designed to minimize measurement overhead. Supports multi-threaded profiling with output compatible with both Optick and Google Trace for visualization.
+                </p>
                 <p class="ProjectDescription">
-                  I created this library to profile various game engines and other projects I work on, it's cross platform and allows output to a file that you can then either run in Optick or in Google trace. The API is very easy to use and there's multi threaded support for full performance measurement. The library is as lightweight as possible to not throw results off.
+                  Built to instrument MauEng and other projects. Simple macro-based API for scoped profiling that you can drop into any codebase. Used to identify and fix performance bottlenecks across my engine's rendering and update loops.
                 </p> 
                 <div class="project-buttons">
                   <a href="https://github.com/MauroDeryckere/Profiler" target="_blank" class="cta"
@@ -451,10 +451,10 @@
                 <img src="src/png/check-mark.png" alt="Done favicon" class="faviconforProject" />
                 <article class="ProjectHeading">UUID Library</article>
                 <p class="ProjectDescription">
-                  A C++ library for generating Universally Unique Identifiers (UUIDs) using the RFC 4122 standard. This library is used to generate unique identifiers for objects, entities, or resources in applications.  
-                </p> 
+                  A C++ UUID generation library implementing RFC 4122. Provides unique identifiers for entities, resources, and objects in engine and application code.
+                </p>
                 <p class="ProjectDescription">
-                  I created this small library for my 3D engine project (MauEng) to generate unique IDs for entities and resources.
+                  Built as a dependency for MauEng's entity and resource management systems. Header-only, minimal overhead, and straightforward to integrate.
                 </p> 
                 <div class="project-buttons">
                   <a href="https://github.com/MauroDeryckere/UUID" target="_blank" class="cta"
