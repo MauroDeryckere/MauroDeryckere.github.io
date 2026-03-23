@@ -807,12 +807,14 @@ noscript {
 
 .letsTalkBtn {
     position: relative;
+    display: inline-block;
     border: none;
     width: 180px;
     height: 40px;
     border-radius: 0;
     cursor: pointer;
-    transition: .3s
+    transition: .3s;
+    text-decoration: none
 }
 
 .letsTalkBtn-text {
@@ -1673,7 +1675,8 @@ footer {
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        z-index: 9998
+        z-index: 9998;
+        background: linear-gradient(to bottom, var(--color-dark-mode) 60%, transparent)
     }
 
     .activeThismobiletab:before,
@@ -1832,7 +1835,7 @@ footer {
     }
 
     .image-div {
-        padding: 0 0 0 80px
+        padding: 0 20px 0 20px
     }
 }
 
