@@ -1,6 +1,4 @@
-#labelforsetting,
-#labelforvisualmode,
-#switchforvisualmode:checked+#labelforvisualmode {
+#labelforsetting {
     background-repeat: no-repeat;
     background-position: center
 }
@@ -11,11 +9,6 @@
     background-size: 60%
 }
 
-#preloader,
-.invertapplied,
-.invertsettinglabel {
-    filter: invert(1)
-}
 
 #preloader,
 noscript {
@@ -35,10 +28,6 @@ body {
 
 .link {
     color: #14efe1;
-}
-
-.light-mode .link {
-    color: #0a8f87;
 }
 
 :focus-visible {
@@ -102,7 +91,6 @@ html {
     --color-white: #fff;
     --color-black: #000;
     --color-dark-mode: #11111b;
-    --color-light-mode: #ece7e1;
     --color-ddd-color: #ddd;
     --color-gray: #c4c4c4;
     --color-purple: #8000ff;
@@ -188,21 +176,6 @@ html {
     left: -20px
 }
 
-.light-mode {
-    --color-dark-mode: #ece7e1;
-    --color-black: #fff;
-    --color-white: #000;
-    --color-ddd-color: rgb(31, 31, 31);
-    --color-navbarBorder-dark: #d1d6eb;
-    --static-heading-gradient-blue: #0f7878;
-    --static-heading-gradient-pink: #f09bb9;
-    --color-shadowDark: #e2ddd7;
-    --tech-stack-box-first-color: #f5f0ea;
-    --tech-stack-box-second-color: #ece7e100;
-    --tech-stack-box-border-color: #c8c3bd;
-    --color-gray: #555
-}
-
 .setting-container {
     width: 60px;
     height: 50px;
@@ -224,8 +197,7 @@ html {
     cursor: pointer
 }
 
-.soundtogglebuttoncontainer,
-.visualmodetogglebuttoncontainer {
+.soundtogglebuttoncontainer {
     align-items: center;
     width: fit-content;
     transition-duration: .3s
@@ -235,21 +207,8 @@ html {
     width: 200px
 }
 
-.visualmodetogglebuttoncontainer {
-    height: fit-content;
-    display: flex;
-    justify-content: center;
-    transform: translate(-50px) scale(0)
-}
-
-.visualmodeshow {
-    transition-duration: .3s;
-    transform: translate(0) scale(1)
-}
-
 #switchforsetting,
 #switchforsound,
-#switchforvisualmode,
 .hamburger,
 .mobiletogglemenu {
     display: none
@@ -258,23 +217,6 @@ html {
 #switchforsetting:checked+#labelforsetting {
     transform: rotate(180deg);
     transition-duration: .5s
-}
-
-#labelforvisualmode {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    background-image: url(src/png/crescent-moon.png);
-    background-size: 50%;
-    transition-duration: .5s;
-    cursor: pointer
-}
-
-#switchforvisualmode:checked+#labelforvisualmode {
-    transform: rotate(360deg);
-    transition-duration: .5s;
-    background-image: url(src/png/sun.png);
-    background-size: 60%
 }
 
 .soundtogglebuttoncontainer {
@@ -846,11 +788,6 @@ noscript {
     font-size: 1.6rem
 }
 
-.light-mode .letsTalkBtn-text {
-    background-color: rgba(30, 30, 30, .466);
-    color: #fff
-}
-
 .cta:hover span,
 .text,
 .tooltip {
@@ -1283,9 +1220,6 @@ footer {
     line-height: 1.5
 }
 
-.light-mode .ProjectDescription {
-    color: #4a4a55
-}
 
 .project-buttons {
     width: 100%;
@@ -1398,7 +1332,7 @@ footer {
 .footer-background {
     width: 100%;
     height: 50vh;
-    background-color: var(--color-dark-mode);
+    background-color: #11111b;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -1608,7 +1542,7 @@ footer {
 }
 
 .footer-bottom {
-    background-color: var(--color-dark-mode);
+    background-color: #11111b;
     width: 100%;
     display: flex;
     align-items: center;
