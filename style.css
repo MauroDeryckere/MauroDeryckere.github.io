@@ -1019,6 +1019,10 @@ noscript {
     line-height: 1.6
 }
 
+.about-info p + p {
+    margin-top: 1.2em
+}
+
 .dp {
     width: 40%;
     display: flex;
