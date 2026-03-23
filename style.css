@@ -254,7 +254,7 @@ html {
     position: relative;
     width: 40px;
     height: 40px;
-    background-image: url(src/png/crescent-moon\ \(1\).png);
+    background-image: url(src/png/crescent-moon.png);
     background-size: 50%;
     transition-duration: .5s;
     cursor: pointer
@@ -434,11 +434,11 @@ noscript {
 }
 
 .hey {
-    color: #fff;
+    color: var(--color-white);
     position: absolute;
     font-size: 2.5rem;
     font-weight: 300;
-    background-color: #20222e;
+    background-color: var(--tech-stack-box-first-color);
     padding: 5px 10px;
     border-radius: 20px;
     left: 120px;
@@ -824,7 +824,7 @@ noscript {
     border: none;
     border-radius: 7px;
     backdrop-filter: blur(5px);
-    color: #000;
+    color: var(--color-black);
     align-items: center;
     justify-content: center;
     letter-spacing: .8px
@@ -833,7 +833,7 @@ noscript {
 .cta:hover span,
 .text,
 .tooltip {
-    color: #fff
+    color: var(--color-white)
 }
 
 .resume-btn,
