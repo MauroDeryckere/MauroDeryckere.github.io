@@ -43,7 +43,6 @@ body {
 .eye,
 .image-div,
 .logo,
-.navbar,
 .project-box,
 .resume-btn,
 footer {
@@ -171,6 +170,9 @@ html {
 
 .activeThistab:before,
 .navbar-tabs-ul li:hover:before {
+    content: "";
+    position: absolute;
+    display: block;
     background-color: var(--color-purple);
     height: 3px;
     width: 100%;
@@ -366,7 +368,9 @@ noscript {
 .navbar-tabs-ul a {
     color: var(--color-white);
     font-weight: 300;
-    letter-spacing: .5px
+    letter-spacing: .5px;
+    padding: 10px 5px;
+    display: block
 }
 
 .logo {
@@ -438,7 +442,6 @@ noscript {
     position: relative
 }
 
-.activeThistab:before,
 .face {
     content: "";
     position: absolute
@@ -485,9 +488,6 @@ noscript {
     transform: translateY(200px)
 }
 
-.activeThistab:before {
-    border-radius: 2px
-}
 
 .dp::after,
 .dp::before {
@@ -1720,7 +1720,6 @@ footer {
         background: linear-gradient(to bottom, var(--color-dark-mode) 60%, transparent)
     }
 
-    .activeThismobiletab:before,
     .burger-bar,
     .hamburger-animation1,
     .hamburger-animation2,
@@ -1825,8 +1824,24 @@ footer {
         position: relative;
         cursor: pointer;
         font-family: fira code;
-        height: 30px;
         width: fit-content
+    }
+
+    .mobile-navbar-tabs-li a {
+        padding: 15px 20px;
+        display: block
+    }
+
+    .mobile-navbar-tabs-li:hover:before {
+        content: "";
+        position: absolute;
+        display: block;
+        background-color: var(--color-purple);
+        height: 3px;
+        width: 100%;
+        bottom: -5px;
+        left: 0;
+        border-radius: 2px
     }
 
     .about-info,
@@ -1854,10 +1869,13 @@ footer {
     .activeThismobiletab:before {
         content: "";
         position: absolute;
-        height: 10px;
-        width: 10px;
-        left: -20px;
-        border-radius: 50%
+        display: block;
+        background-color: var(--color-purple);
+        height: 3px;
+        width: 100%;
+        bottom: -5px;
+        left: 0;
+        border-radius: 2px
     }
 
     .projects-section-div {
