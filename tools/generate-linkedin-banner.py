@@ -38,6 +38,8 @@ TAG_BORDER = '#292929'
 
 # Dimensions (LinkedIn banner standard)
 W, H = 1584, 396
+# Left offset to avoid profile photo overlap
+LEFT = 300
 
 img = Image.new('RGB', (W, H), BG_COLOR)
 draw = ImageDraw.Draw(img)
@@ -69,14 +71,14 @@ except:
     bold_font = ImageFont.load_default()
 
 # Purple accent line
-draw.rectangle([(80, 80), (84, 210)], fill=ACCENT_PURPLE)
+draw.rectangle([(LEFT, 80), (LEFT + 4, 210)], fill=ACCENT_PURPLE)
 
 # Name and title
-draw.text((110, 80), NAME, fill=TEXT_WHITE, font=title_font)
-draw.text((110, 145), TITLE, fill=TEXT_GRAY, font=subtitle_font)
+draw.text((LEFT + 30, 80), NAME, fill=TEXT_WHITE, font=title_font)
+draw.text((LEFT + 30, 145), TITLE, fill=TEXT_GRAY, font=subtitle_font)
 
 # Tech tags
-x_pos = 110
+x_pos = LEFT + 30
 for tag in TAGS:
     bbox = draw.textbbox((0, 0), tag, font=small_font)
     tw = bbox[2] - bbox[0]
@@ -88,7 +90,7 @@ for tag in TAGS:
     x_pos += tw + 30
 
 # Separator line
-draw.line([(110, H - 60), (W - 110, H - 60)], fill=TAG_BORDER, width=1)
+draw.line([(LEFT + 30, H - 60), (W - 80, H - 60)], fill=TAG_BORDER, width=1)
 
 # Helper: create text badge icon
 def make_badge(text, bg_color, size=16):
@@ -132,7 +134,7 @@ icon_map = {
 # Links row
 text_y = H - 42
 icon_y = text_y + 1
-x_pos = 110
+x_pos = LEFT + 30
 for icon_name, text, color in LINKS:
     icon = icon_map[icon_name]
     img.paste(icon, (x_pos, icon_y), icon)
