@@ -2003,6 +2003,12 @@ footer {
     .project-boxes-div {
         padding: 40px 0
     }
+
+    .tooltip {
+        white-space: normal;
+        text-align: center;
+        width: 120%
+    }
 }
 
 @media screen and (max-width:500px) {
