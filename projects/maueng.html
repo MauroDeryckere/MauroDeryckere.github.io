@@ -87,6 +87,10 @@
       padding: 0;
     }
 
+    .pp-nav-links li {
+      position: relative;
+    }
+
     .pp-nav-links a {
       font-family: "Fira Code";
       font-size: 1.5rem;
@@ -95,11 +99,22 @@
       letter-spacing: .5px;
       text-decoration: none;
       padding: 10px 5px;
+      display: block;
       transition: opacity .2s ease;
     }
 
-    .pp-nav-links a:hover {
-      opacity: .7;
+    .pp-nav-links li:hover::before {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 3px;
+      bottom: -5px;
+      left: 0;
+      border-radius: 2px;
+      background-color: var(--color-white);
+      width: 100%;
+      opacity: .3;
+      transition: opacity .2s ease;
     }
 
     /* ---- Hero ---- */
@@ -108,12 +123,15 @@
       margin-bottom: 48px;
     }
 
-    .pp-hero .section-heading-article {
+    .pp-hero h1 {
       font-size: 4.5rem;
-      background-image: linear-gradient(90deg, var(--static-heading-gradient-blue), var(--static-heading-gradient-pink));
+      font-weight: 700;
+      background: linear-gradient(-45deg, var(--color-light-blue), var(--color-light-purple), var(--color-light-blue), var(--color-light-purple));
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-size: 400% 400%;
+      animation: gradient 3s infinite;
     }
 
     .pp-hero .lead {
@@ -307,7 +325,7 @@
     @media (max-width: 700px) {
       .pp { padding: 70px 16px 60px; }
       .pp-hero { padding-top: 48px; }
-      .pp-hero .section-heading-article { font-size: 3.2rem; }
+      .pp-hero h1 { font-size: 3.2rem; }
       .pp-hero .lead { font-size: 1.7rem; }
       .pp-hero .intro { font-size: 1.35rem; }
       .pp-features { grid-template-columns: 1fr; }
