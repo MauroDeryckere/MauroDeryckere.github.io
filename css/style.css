@@ -2250,7 +2250,10 @@ code {
 
 .pp-nav-links li {
     position: relative;
+    transition: opacity .2s ease;
 }
+
+.pp-nav-links li:hover { opacity: .7; }
 
 .pp-nav-links a {
     font-family: "Fira Code", monospace;
@@ -2261,7 +2264,6 @@ code {
     text-decoration: none;
     padding: 10px 5px;
     display: block;
-    transition: opacity .2s ease;
 }
 
 .pp-nav-links li::before {
@@ -2279,7 +2281,6 @@ code {
 }
 
 .pp-nav-links li:hover::before { opacity: .3; }
-.pp-nav-links li:hover a { opacity: .7; }
 
 .pp-nav-links li.active::before {
     background-color: var(--color-purple);
@@ -2314,6 +2315,8 @@ code {
     color: #c4c4c4;
     margin: 4px 0 24px;
     font-weight: 300;
+    font-family: "Fira Code", monospace;
+    letter-spacing: .5px;
 }
 
 .pp-hero .intro {
@@ -2430,6 +2433,7 @@ code {
     color: #fff;
     font-size: 1.45rem;
     margin: 0 0 8px;
+    font-family: "Fira Code", monospace;
 }
 
 .pp-fcard p {
