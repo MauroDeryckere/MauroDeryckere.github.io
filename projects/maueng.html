@@ -103,7 +103,6 @@
     .pp-hero {
       padding: 80px 0 0;
       margin-bottom: 48px;
-      text-align: center;
     }
 
     .pp-hero h1 {
@@ -118,15 +117,12 @@
       font-size: 1.8rem;
       color: #9a9a9a;
       margin: 0 0 20px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .pp-hero .intro {
       font-size: 1.4rem;
       color: #7a7a8a;
-      margin: 0 auto 28px;
+      margin: 0 0 28px;
       max-width: 640px;
       line-height: 1.7;
     }
@@ -135,7 +131,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      justify-content: center;
       margin-bottom: 28px;
     }
 
@@ -151,48 +146,72 @@
 
     .pp-actions {
       display: flex;
-      gap: 12px;
+      gap: 16px;
       flex-wrap: wrap;
-      justify-content: center;
     }
 
-    .pp-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 28px;
-      border-radius: 50px;
-      font-family: "Fira Code", monospace;
-      font-size: 1.3rem;
-      text-decoration: none;
-      transition: all 0.25s ease;
-      cursor: pointer;
-    }
-
-    .pp-btn-primary {
-      background: linear-gradient(135deg, #8000ff, #a040ff);
-      color: #fff;
+    /* Reuse main site .cta button style */
+    .pp-actions .cta {
+      padding: 12px 18px;
+      transition: .2s;
       border: none;
-      box-shadow: 0 4px 20px rgba(128, 0, 255, 0.25);
+      background: 0 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      text-decoration: none;
     }
 
-    .pp-btn-primary:hover {
-      background: linear-gradient(135deg, #9933ff, #b366ff);
-      box-shadow: 0 6px 28px rgba(128, 0, 255, 0.35);
-      transform: translateY(-1px);
+    .pp-actions .cta::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      display: block;
+      border-radius: 50px;
+      background: #2b2f4e;
+      width: 45px;
+      height: 45px;
+      transition: .3s;
+    }
+
+    .pp-actions .cta:hover::before {
+      width: 100%;
+    }
+
+    .pp-actions .cta span {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      color: var(--color-light-blue);
+      position: relative;
+    }
+
+    .pp-actions .cta:hover span {
       color: #fff;
     }
 
-    .pp-btn-outline {
-      background: transparent;
-      color: #c4c4c4;
-      border: 1px solid #404050;
+    .pp-actions .cta svg {
+      position: relative;
+      top: 0;
+      margin-left: 10px;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke: var(--color-light-blue);
+      stroke-width: 2;
+      transform: translateX(-5px);
+      transition: .3s;
     }
 
-    .pp-btn-outline:hover {
-      border-color: #8000ff;
-      color: #fff;
-      background: rgba(128, 0, 255, 0.06);
+    .pp-actions .cta:hover svg {
+      stroke: white;
+      transform: translateX(0);
+    }
+
+    .pp-actions .cta:active {
+      transform: scale(.95);
     }
 
     /* ---- Sections ---- */
@@ -287,33 +306,11 @@
       font-family: "Fira Code", monospace;
     }
 
-    .pp-fcard .pp-fcard-summary {
+    .pp-fcard p {
       font-size: 1.3rem;
       line-height: 1.6;
       margin: 0;
       color: #9a9a9a;
-    }
-
-    .pp-fcard-detail {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, margin 0.35s ease;
-      margin-top: 0;
-    }
-
-    .pp-fcard:hover .pp-fcard-detail,
-    .pp-fcard:focus-within .pp-fcard-detail {
-      max-height: 200px;
-      margin-top: 12px;
-    }
-
-    .pp-fcard-detail p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      color: #7a7a8a;
-      margin: 0;
-      padding-top: 12px;
-      border-top: 1px solid #1e1e2e;
     }
 
     /* ---- Prose ---- */
@@ -438,9 +435,21 @@
       </div>
 
       <div class="pp-actions">
-        <a href="https://github.com/MauroDeryckere/MauEng" target="_blank" rel="noopener noreferrer"
-          class="pp-btn pp-btn-primary">View on GitHub</a>
-        <a href="#demo" class="pp-btn pp-btn-outline">Watch Demo</a>
+        <a href="https://github.com/MauroDeryckere/MauEng" target="_blank" rel="noopener noreferrer" class="cta"
+          aria-label="View MauEng on GitHub">
+          <span>GitHub</span>
+          <svg viewBox="0 0 13 10" height="10px" width="15px">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </a>
+        <a href="#demo" class="cta" aria-label="Watch MauEng demo">
+          <span>Watch Demo</span>
+          <svg viewBox="0 0 13 10" height="10px" width="15px">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </a>
       </div>
     </div>
 
@@ -473,47 +482,29 @@
       </figure>
 
       <div class="pp-features">
-        <div class="pp-fcard" tabindex="0">
+        <div class="pp-fcard">
           <h3>Bindless Rendering</h3>
-          <p class="pp-fcard-summary">Global buffers with batched indirect draw commands and descriptor arrays.</p>
-          <div class="pp-fcard-detail">
-            <p>Textures are stored in an unbounded descriptor array. Draw calls use vkCmdDrawIndexedIndirect to avoid per-draw binding overhead entirely.</p>
-          </div>
+          <p>Global buffers with batched indirect draw commands. Textures in an unbounded descriptor array - no per-draw binding overhead.</p>
         </div>
-        <div class="pp-fcard" tabindex="0">
+        <div class="pp-fcard">
           <h3>100K Instances</h3>
-          <p class="pp-fcard-summary">Tested with 100,000 instanced meshes running at 60 FPS.</p>
-          <div class="pp-fcard-detail">
-            <p>A 1425-index, 311-vertex gun mesh instanced 100K times. Main thread sleeping ~10ms with GPU headroom to spare on an RTX 3060.</p>
-          </div>
+          <p>Tested with 100,000 instanced meshes at 60 FPS on an RTX 3060 with GPU headroom to spare.</p>
         </div>
-        <div class="pp-fcard" tabindex="0">
+        <div class="pp-fcard">
           <h3>Deferred Shading</h3>
-          <p class="pp-fcard-summary">G-buffer pipeline with depth prepass to minimize overdraw.</p>
-          <div class="pp-fcard-detail">
-            <p>Point and directional lighting resolved in screen space. Depth prepass runs first to reject occluded fragments before expensive shading.</p>
-          </div>
+          <p>G-buffer pipeline with depth prepass. Point and directional lighting resolved in screen space.</p>
         </div>
-        <div class="pp-fcard" tabindex="0">
+        <div class="pp-fcard">
           <h3>Asset Pipeline</h3>
-          <p class="pp-fcard-summary">Assimp integration supporting all major 3D formats.</p>
-          <div class="pp-fcard-detail">
-            <p>Meshes are split into instanced submeshes automatically. Materials loaded from file with default and invalid fallbacks to prevent GPU branching.</p>
-          </div>
+          <p>Assimp integration for all major 3D formats. Auto-instanced submeshes with file-based material loading.</p>
         </div>
-        <div class="pp-fcard" tabindex="0">
+        <div class="pp-fcard">
           <h3>Tone Mapping</h3>
-          <p class="pp-fcard-summary">Multiple tone mapping modes with adjustable exposure.</p>
-          <div class="pp-fcard-detail">
-            <p>Custom and automatic exposure controls. Toggle between different tone mappers at runtime via keybind.</p>
-          </div>
+          <p>Multiple tone mapping modes with adjustable exposure. Runtime toggling via keybinds.</p>
         </div>
-        <div class="pp-fcard" tabindex="0">
+        <div class="pp-fcard">
           <h3>Debug Rendering</h3>
-          <p class="pp-fcard-summary">Runtime line, sphere, and light visualization API.</p>
-          <div class="pp-fcard-detail">
-            <p>One-liner debug draws for rapid iteration. Visualize point lights as spheres, directional lights as arrows, and arbitrary debug geometry.</p>
-          </div>
+          <p>One-liner API for drawing lines, spheres, and light visualizations at runtime.</p>
         </div>
       </div>
 
@@ -542,47 +533,29 @@
       </p>
 
       <div class="pp-features">
-        <div class="pp-fcard" tabindex="0">
+        <div class="pp-fcard">
           <h3>Event System</h3>
-          <p class="pp-fcard-summary">Delegates with immediate and queued broadcasts.</p>
-          <div class="pp-fcard-detail">
-            <p>Lambda and member function binding. Delayed unsubscription prevents dangling pointer issues during broadcast iteration.</p>
-          </div>
+          <p>Delegates with immediate and queued broadcasts. Lambda and member function binding with safe delayed unsubscription.</p>
         </div>
-        <div class="pp-fcard" tabindex="0">
+        <div class="pp-fcard">
           <h3>Input System</h3>
-          <p class="pp-fcard-summary">Action-based input with mapping contexts and runtime rebinding.</p>
-          <div class="pp-fcard-detail">
-            <p>Keyboard and mouse support. Multiple mapping contexts that can be swapped at runtime. Action queries via player interface.</p>
-          </div>
+          <p>Action-based input with mapping contexts, keyboard and mouse support, runtime rebinding.</p>
         </div>
-        <div class="pp-fcard" tabindex="0">
+        <div class="pp-fcard">
           <h3>Component System</h3>
-          <p class="pp-fcard-summary">EnTT-backed ECS for entities, components, and queries.</p>
-          <div class="pp-fcard-detail">
-            <p>Engine wrapper around EnTT providing a consistent interface. Supports almost all EnTT functionality through the abstraction layer.</p>
-          </div>
+          <p>EnTT-backed ECS with an engine wrapper providing the interface for entities, components, and queries.</p>
         </div>
-        <div class="pp-fcard" tabindex="0">
+        <div class="pp-fcard">
           <h3>Logging</h3>
-          <p class="pp-fcard-summary">Multi-level, multi-category logger with console and file output.</p>
-          <div class="pp-fcard-detail">
-            <p>Configurable file rotation, color-coded console output, per-category priority filtering. Timestamped file logs with single-backup rotation.</p>
-          </div>
+          <p>Multi-level, multi-category logger with color-coded console output and rotating file logs.</p>
         </div>
-        <div class="pp-fcard" tabindex="0">
+        <div class="pp-fcard">
           <h3>Profiling</h3>
-          <p class="pp-fcard-summary">Chrome tracing output with optional Optick integration.</p>
-          <div class="pp-fcard-detail">
-            <p>Macro-based scoped profiling. Press F1 to capture a frame. Output compatible with chrome://tracing and Optick visualizer.</p>
-          </div>
+          <p>Macro-based scoped profiling with Chrome tracing output and optional Optick integration.</p>
         </div>
-        <div class="pp-fcard" tabindex="0">
+        <div class="pp-fcard">
           <h3>Timer Manager</h3>
-          <p class="pp-fcard-summary">One-shot and looping timers with handle-based management.</p>
-          <div class="pp-fcard-detail">
-            <p>Next-tick scheduling, pause/resume/reset, remaining time queries. Timer removal is safe during callback execution.</p>
-          </div>
+          <p>One-shot and looping timers, next-tick scheduling, pause/resume/reset with handle-based management.</p>
         </div>
       </div>
     </section>
