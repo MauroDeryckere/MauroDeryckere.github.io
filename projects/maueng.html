@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#11111b" />
   <meta name="description"
     content="MauEng - A 3D game engine built with C++20 and Vulkan by Mauro Deryckere. Features bindless rendering, deferred shading, instanced drawing, and more." />
   <meta name="author" content="Mauro Deryckere" />
@@ -11,123 +12,203 @@
   <meta property="og:description"
     content="A 3D game engine built with C++20 and Vulkan featuring bindless rendering, deferred shading, and instanced drawing." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mauroderyckere.github.io/projects/maueng.html" />
+  <meta property="og:image" content="https://mauroderyckere.github.io/assets/images/projects/maueng.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MauEng - 3D Game Engine | Mauro Deryckere" />
+  <meta name="twitter:description"
+    content="A 3D game engine built with C++20 and Vulkan featuring bindless rendering, deferred shading, and instanced drawing." />
+  <meta name="twitter:image" content="https://mauroderyckere.github.io/assets/images/projects/maueng.png" />
   <title>MauEng - 3D Game Engine | Mauro Deryckere</title>
   <link rel="icon" type="image/x-icon" href="../assets/images/site/logo.png" />
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+    media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" /></noscript>
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    .project-page {
-      max-width: 900px;
+    .pp {
+      max-width: 860px;
       margin: 0 auto;
-      padding: 40px 24px 80px;
+      padding: 120px 24px 80px;
       color: #c4c4c4;
+      font-size: 1.5rem;
+      line-height: 1.7;
     }
 
-    .project-page a {
-      color: #8000ff;
+    .pp a {
+      color: #cf59e6;
       text-decoration: none;
       transition: color 0.2s;
     }
 
-    .project-page a:hover {
+    .pp a:hover {
+      color: #fff;
+    }
+
+    /* Navbar override for project pages */
+    .pp-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      background: rgba(17, 17, 27, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #292929;
+    }
+
+    .pp-nav-logo {
+      font-family: "Fira Code", monospace;
+      font-size: 1.5rem;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .pp-nav-logo:hover {
       color: #cf59e6;
     }
 
-    .back-link {
-      display: inline-block;
-      margin-bottom: 32px;
+    .pp-nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .pp-nav-links a {
       font-family: "Fira Code", monospace;
-      font-size: 1.4rem;
-    }
-
-    .back-link::before {
-      content: "\2190 ";
-    }
-
-    .project-hero {
-      margin-bottom: 48px;
-    }
-
-    .project-hero h1 {
-      font-family: "Fira Code", monospace;
-      font-size: 3.2rem;
-      color: #fff;
-      margin: 0 0 12px;
-    }
-
-    .project-hero .subtitle {
-      font-size: 1.6rem;
-      margin: 0 0 20px;
+      font-size: 1.3rem;
       color: #9a9a9a;
+      text-decoration: none;
+      transition: color 0.2s;
     }
 
-    .project-tags-row {
+    .pp-nav-links a:hover {
+      color: #fff;
+    }
+
+    /* Hero */
+    .pp-hero {
+      margin-bottom: 56px;
+    }
+
+    .pp-hero h1 {
+      font-family: "Fira Code", monospace;
+      font-size: 3.6rem;
+      color: #fff;
+      margin: 0 0 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .pp-hero .lead {
+      font-size: 1.8rem;
+      color: #9a9a9a;
+      margin: 0 0 24px;
+    }
+
+    .pp-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
-    .project-tags-row .tag {
-      background: rgba(128, 0, 255, 0.15);
-      border: 1px solid rgba(128, 0, 255, 0.3);
+    .pp-tags span {
+      background: rgba(128, 0, 255, 0.12);
+      border: 1px solid rgba(128, 0, 255, 0.25);
       color: #cf59e6;
-      padding: 4px 12px;
+      padding: 5px 14px;
       border-radius: 20px;
       font-size: 1.2rem;
       font-family: "Fira Code", monospace;
     }
 
-    .project-badges {
+    .pp-actions {
       display: flex;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-
-    .project-badges img {
-      height: 20px;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 16px;
+      gap: 12px;
       flex-wrap: wrap;
+      align-items: center;
     }
 
-    .project-links a {
+    .pp-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 10px 20px;
-      border: 1px solid rgba(128, 0, 255, 0.4);
-      border-radius: 8px;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 50px;
       font-family: "Fira Code", monospace;
       font-size: 1.3rem;
-      color: #fff;
-      transition: border-color 0.2s, background 0.2s;
+      text-decoration: none;
+      transition: all 0.25s ease;
     }
 
-    .project-links a:hover {
+    .pp-btn-primary {
+      background: #8000ff;
+      color: #fff;
+      border: 1px solid #8000ff;
+    }
+
+    .pp-btn-primary:hover {
+      background: #9933ff;
+      border-color: #9933ff;
+      color: #fff;
+    }
+
+    .pp-btn-outline {
+      background: transparent;
+      color: #c4c4c4;
+      border: 1px solid #404050;
+    }
+
+    .pp-btn-outline:hover {
       border-color: #8000ff;
-      background: rgba(128, 0, 255, 0.1);
       color: #fff;
     }
 
-    .video-embed {
+    /* Sections */
+    .pp-section {
+      margin-bottom: 64px;
+    }
+
+    .pp-section h2 {
+      font-family: "Fira Code", monospace;
+      font-size: 2.4rem;
+      color: #fff;
+      margin: 0 0 8px;
+    }
+
+    .pp-section > .pp-subtitle {
+      color: #9a9a9a;
+      font-size: 1.4rem;
+      margin: 0 0 24px;
+    }
+
+    .pp-divider {
+      border: none;
+      border-top: 1px solid #1e1e2e;
+      margin: 64px 0;
+    }
+
+    /* Video */
+    .pp-video {
       position: relative;
       width: 100%;
       padding-bottom: 56.25%;
-      margin-bottom: 48px;
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
+      border: 1px solid #292929;
     }
 
-    .video-embed iframe {
+    .pp-video iframe {
       position: absolute;
       top: 0;
       left: 0;
@@ -136,265 +217,346 @@
       border: none;
     }
 
-    .section-title {
-      font-family: "Fira Code", monospace;
-      font-size: 2.2rem;
-      color: #fff;
-      margin: 48px 0 20px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid #292929;
+    /* Images */
+    .pp figure {
+      margin: 0 0 40px;
     }
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-
-    .feature-card {
-      background: linear-gradient(to bottom right, #1a1a29, rgba(27, 27, 40, 0));
+    .pp figure img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
       border: 1px solid #292929;
-      border-radius: 12px;
-      padding: 20px;
-      transition: border-color 0.2s;
+      display: block;
     }
 
-    .feature-card:hover {
-      border-color: rgba(128, 0, 255, 0.4);
+    .pp figcaption {
+      font-size: 1.2rem;
+      color: #6a6a7a;
+      text-align: center;
+      margin-top: 10px;
+      font-style: italic;
     }
 
-    .feature-card h3 {
+    /* Feature cards */
+    .pp-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .pp-fcard {
+      background: linear-gradient(135deg, #1a1a29 0%, rgba(27, 27, 40, 0) 100%);
+      border: 1px solid #292929;
+      border-radius: 16px;
+      padding: 24px;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .pp-fcard:hover {
+      border-color: rgba(128, 0, 255, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .pp-fcard h3 {
       color: #fff;
       font-size: 1.5rem;
       margin: 0 0 8px;
+      font-family: "Fira Code", monospace;
     }
 
-    .feature-card p {
+    .pp-fcard p {
       font-size: 1.3rem;
       line-height: 1.6;
       margin: 0;
-    }
-
-    .screenshot {
-      width: 100%;
-      border-radius: 12px;
-      border: 1px solid #292929;
-      margin-bottom: 16px;
-    }
-
-    .screenshot-caption {
-      font-size: 1.2rem;
       color: #9a9a9a;
-      text-align: center;
-      margin: -8px 0 32px;
     }
 
-    .pipeline-img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 8px;
+    /* Prose text */
+    .pp-prose {
+      font-size: 1.5rem;
+      line-height: 1.8;
+      color: #c4c4c4;
+      margin-bottom: 32px;
     }
 
-    .tech-list {
+    /* Tech stack */
+    .pp-tech {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 24px 0 0;
     }
 
-    .tech-list li {
-      background: rgba(128, 0, 255, 0.1);
+    .pp-tech li {
+      background: rgba(128, 0, 255, 0.08);
       border: 1px solid #292929;
-      padding: 8px 16px;
-      border-radius: 8px;
+      padding: 8px 18px;
+      border-radius: 50px;
       font-family: "Fira Code", monospace;
       font-size: 1.3rem;
       color: #c4c4c4;
+      transition: border-color 0.2s;
     }
 
-    .future-list {
+    .pp-tech li:hover {
+      border-color: rgba(128, 0, 255, 0.3);
+    }
+
+    /* Roadmap */
+    .pp-roadmap {
       list-style: none;
       padding: 0;
+      margin: 24px 0 0;
     }
 
-    .future-list li {
-      padding: 8px 0;
+    .pp-roadmap li {
+      padding: 12px 0;
       font-size: 1.4rem;
-      border-bottom: 1px solid #1a1a29;
+      border-bottom: 1px solid #1e1e2e;
+      color: #9a9a9a;
     }
 
-    .future-list li::before {
-      content: "\25B8 ";
-      color: #8000ff;
+    .pp-roadmap li::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #8000ff;
+      margin-right: 12px;
+      vertical-align: middle;
     }
 
-    @media (max-width: 600px) {
-      .project-hero h1 {
-        font-size: 2.4rem;
+    /* Footer */
+    .pp-footer {
+      text-align: center;
+      padding-top: 32px;
+      border-top: 1px solid #1e1e2e;
+    }
+
+    .pp-footer a {
+      font-family: "Fira Code", monospace;
+      font-size: 1.4rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .pp {
+        padding: 100px 16px 60px;
       }
 
-      .section-title {
-        font-size: 1.8rem;
+      .pp-hero h1 {
+        font-size: 2.6rem;
       }
 
-      .feature-grid {
+      .pp-hero .lead {
+        font-size: 1.5rem;
+      }
+
+      .pp-section h2 {
+        font-size: 1.9rem;
+      }
+
+      .pp-features {
         grid-template-columns: 1fr;
+      }
+
+      .pp-nav {
+        padding: 12px 16px;
+      }
+
+      .pp-nav-links {
+        gap: 16px;
+      }
+
+      .pp-nav-links a {
+        font-size: 1.2rem;
       }
     }
   </style>
 </head>
 
-<body class="body" style="overflow-x:hidden;">
-  <div class="project-page">
-    <a href="../#projects" class="back-link">Back to Portfolio</a>
+<body class="body">
+  <nav class="pp-nav">
+    <a href="../" class="pp-nav-logo">Mauro Deryckere</a>
+    <ul class="pp-nav-links">
+      <li><a href="../#projects">Projects</a></li>
+      <li><a href="https://github.com/MauroDeryckere/MauEng" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+  </nav>
 
-    <div class="project-hero">
+  <main class="pp">
+    <div class="pp-hero">
       <h1>MauEng</h1>
-      <p class="subtitle">3D Game Engine built with C++20 and Vulkan</p>
+      <p class="lead">A 3D game engine built from scratch with C++20 and Vulkan.</p>
 
-      <div class="project-tags-row">
-        <span class="tag">C++20</span>
-        <span class="tag">Vulkan</span>
-        <span class="tag">Engine</span>
-        <span class="tag">Graphics</span>
-        <span class="tag">CMake</span>
-        <span class="tag">In Progress</span>
+      <div class="pp-tags">
+        <span>C++20</span>
+        <span>Vulkan</span>
+        <span>Engine</span>
+        <span>Graphics</span>
+        <span>CMake</span>
+        <span>In Progress</span>
       </div>
 
-      <div class="project-badges">
-        <a href="https://github.com/MauroDeryckere/MauEng/actions/workflows/build-debug.yml">
-          <img src="https://github.com/MauroDeryckere/MauEng/actions/workflows/build-debug.yml/badge.svg"
-            alt="Build Debug" width="130" height="20" />
-        </a>
-        <a href="https://github.com/MauroDeryckere/MauEng/actions/workflows/build-release.yml">
-          <img src="https://github.com/MauroDeryckere/MauEng/actions/workflows/build-release.yml/badge.svg"
-            alt="Build Release" width="138" height="20" />
-        </a>
-      </div>
-
-      <div class="project-links">
-        <a href="https://github.com/MauroDeryckere/MauEng" target="_blank" rel="noopener noreferrer">GitHub
-          Repository</a>
-        <a href="https://www.youtube.com/watch?v=kbcXu0AuIoM" target="_blank" rel="noopener noreferrer">Watch
-          Demo</a>
+      <div class="pp-actions">
+        <a href="https://github.com/MauroDeryckere/MauEng" target="_blank" rel="noopener noreferrer"
+          class="pp-btn pp-btn-primary">View on GitHub</a>
+        <a href="https://www.youtube.com/watch?v=kbcXu0AuIoM" target="_blank" rel="noopener noreferrer"
+          class="pp-btn pp-btn-outline">Watch Demo</a>
       </div>
     </div>
 
-    <h2 class="section-title">Demo</h2>
-    <div class="video-embed">
-      <iframe src="https://www.youtube.com/embed/kbcXu0AuIoM" title="MauEng demo video"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen loading="lazy"></iframe>
+    <hr class="pp-divider" />
+
+    <section class="pp-section">
+      <h2>Demo</h2>
+      <p class="pp-subtitle">A small demo scene showcasing the engine's rendering and systems.</p>
+      <div class="pp-video">
+        <iframe src="https://www.youtube.com/embed/kbcXu0AuIoM" title="MauEng demo video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <hr class="pp-divider" />
+
+    <section class="pp-section">
+      <h2>Renderer</h2>
+      <p class="pp-prose">
+        The Vulkan renderer uses a fully bindless, indirect drawing architecture. All geometry is stored in global vertex
+        and index buffers, draw commands are batched with <code>vkCmdDrawIndexedIndirect</code>, and textures live in a
+        descriptor array. A deferred shading pipeline with a depth prepass handles lighting efficiently.
+      </p>
+
+      <figure>
+        <img src="../assets/images/projects/maueng/Pipeline.png" alt="MauEng Vulkan rendering pipeline overview"
+          width="900" height="334" loading="lazy" />
+        <figcaption>Rendering pipeline overview</figcaption>
+      </figure>
+
+      <div class="pp-features">
+        <div class="pp-fcard">
+          <h3>Bindless Rendering</h3>
+          <p>Global buffers with batched indirect draw commands. Textures in a descriptor array - no per-draw binding overhead.</p>
+        </div>
+        <div class="pp-fcard">
+          <h3>100K Instances</h3>
+          <p>Tested with 100,000 instanced meshes at 60 FPS. Meshes are split into instanced submeshes automatically.</p>
+        </div>
+        <div class="pp-fcard">
+          <h3>Deferred Shading</h3>
+          <p>G-buffer pipeline with depth prepass to minimize overdraw. Point and directional lighting with configurable exposure.</p>
+        </div>
+        <div class="pp-fcard">
+          <h3>Asset Pipeline</h3>
+          <p>Assimp integration for all major 3D formats. File-based material loading with default and invalid material fallbacks.</p>
+        </div>
+        <div class="pp-fcard">
+          <h3>Tone Mapping</h3>
+          <p>Multiple tone mapping modes with adjustable exposure. Custom and automatic exposure controls.</p>
+        </div>
+        <div class="pp-fcard">
+          <h3>Debug Rendering</h3>
+          <p>Runtime line, sphere, and light visualization API. One-liner debug draws for rapid iteration.</p>
+        </div>
+      </div>
+
+      <figure>
+        <img src="../assets/images/projects/maueng/FlightHelmetExample.png"
+          alt="Flight helmet model rendered with tone mapping and PBR materials" width="557" height="658"
+          loading="lazy" />
+        <figcaption>Flight Helmet - tone mapping and material rendering</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/images/projects/maueng/ZoomedOutInstances.png"
+          alt="100,000 instanced meshes rendered in MauEng" width="900" height="513" loading="lazy" />
+        <figcaption>100,000 instanced meshes running at 60 FPS</figcaption>
+      </figure>
+    </section>
+
+    <hr class="pp-divider" />
+
+    <section class="pp-section">
+      <h2>Engine Core</h2>
+      <p class="pp-prose">
+        Beyond the renderer, MauEng includes a set of core systems designed for flexibility and ease of use.
+        The event system supports both immediate and queued broadcasts with safe delayed unsubscription.
+        An action-based input system with mapping contexts handles keyboard and mouse input with runtime rebinding.
+      </p>
+
+      <div class="pp-features">
+        <div class="pp-fcard">
+          <h3>Event System</h3>
+          <p>Delegates with immediate and queued broadcasts, lambda and member function binding, safe delayed unsubscription.</p>
+        </div>
+        <div class="pp-fcard">
+          <h3>Input System</h3>
+          <p>Action-based input with mapping contexts, keyboard and mouse support, runtime rebinding.</p>
+        </div>
+        <div class="pp-fcard">
+          <h3>Component System</h3>
+          <p>EnTT-backed ECS with a wrapper providing the engine's interface for entities, components, and queries.</p>
+        </div>
+        <div class="pp-fcard">
+          <h3>Logging</h3>
+          <p>Multi-level, multi-category logger with console and file output, configurable rotation and color coding.</p>
+        </div>
+        <div class="pp-fcard">
+          <h3>Profiling</h3>
+          <p>Built-in profiler outputting to Chrome tracing format with optional Optick integration.</p>
+        </div>
+        <div class="pp-fcard">
+          <h3>Timer Manager</h3>
+          <p>One-shot and looping timers, next-tick scheduling, pause/resume/reset with handle-based management.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="pp-divider" />
+
+    <section class="pp-section">
+      <h2>Tech Stack</h2>
+      <ul class="pp-tech">
+        <li>C++20</li>
+        <li>Vulkan</li>
+        <li>CMake</li>
+        <li>SDL</li>
+        <li>GLM</li>
+        <li>Assimp</li>
+        <li>EnTT</li>
+        <li>fmt</li>
+        <li>Optick</li>
+        <li>GitHub Actions CI</li>
+      </ul>
+    </section>
+
+    <hr class="pp-divider" />
+
+    <section class="pp-section">
+      <h2>Roadmap</h2>
+      <p class="pp-subtitle">Planned features for upcoming development.</p>
+      <ul class="pp-roadmap">
+        <li>Image-based lighting (skybox)</li>
+        <li>Auto exposure</li>
+        <li>GPU frustum culling</li>
+        <li>Optimized scene AABB calculation for shadow maps</li>
+        <li>Soft shadows</li>
+        <li>ImGui integration</li>
+        <li>Animations</li>
+        <li>Post-processing effects</li>
+      </ul>
+    </section>
+
+    <div class="pp-footer">
+      <a href="../#projects">&larr; Back to Portfolio</a>
     </div>
-
-    <h2 class="section-title">Renderer</h2>
-
-    <img src="../assets/images/projects/maueng/Pipeline.png" alt="MauEng Vulkan rendering pipeline overview"
-      class="pipeline-img" width="900" height="334" loading="lazy" />
-    <p class="screenshot-caption">Rendering pipeline overview</p>
-
-    <div class="feature-grid">
-      <div class="feature-card">
-        <h3>Bindless Rendering</h3>
-        <p>Global index and vertex buffers with draw commands batched via vkCmdDrawIndexedIndirect. Textures stored in a
-          descriptor array.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Instanced Drawing</h3>
-        <p>Tested with 100,000 instances of a 1425-index mesh running smoothly at 60 FPS with room to spare on an RTX
-          3060.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Deferred Shading</h3>
-        <p>G-buffer based deferred rendering pipeline with a depth prepass to minimize overdraw.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Mesh & Material Loading</h3>
-        <p>Assimp integration supporting all major 3D formats. Meshes split into instanced submeshes with file-based
-          material loading.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Lighting & Tone Mapping</h3>
-        <p>Point and directional lights with configurable exposure. Multiple tone mapping modes.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Debug Rendering</h3>
-        <p>Simple API for drawing lines, spheres, and light visualizations at runtime. Useful for gameplay and physics
-          debugging.</p>
-      </div>
-    </div>
-
-    <img src="../assets/images/projects/maueng/FlightHelmetExample.png"
-      alt="Flight helmet model with tone mapping and lighting" class="screenshot" width="557" height="658"
-      loading="lazy" />
-    <p class="screenshot-caption">Flight Helmet - tone mapping and material rendering</p>
-
-    <img src="../assets/images/projects/maueng/ZoomedOutInstances.png"
-      alt="100,000 instanced meshes rendered in MauEng" class="screenshot" width="900" height="513" loading="lazy" />
-    <p class="screenshot-caption">100,000 instanced meshes</p>
-
-    <h2 class="section-title">Engine Core</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <h3>Event System</h3>
-        <p>Delegates with immediate and queued broadcasts, lambda and member function binding, safe delayed
-          unsubscription.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Input System</h3>
-        <p>Action-based input with mapping contexts, keyboard and mouse support, runtime rebinding.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Component System</h3>
-        <p>EnTT-backed ECS with a wrapper providing the engine's interface for entities, components, and queries.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Logging</h3>
-        <p>Multi-level, multi-category logger with console and file output, configurable rotation and color coding.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Profiling</h3>
-        <p>Built-in profiler outputting to Chrome tracing format. Optional Optick integration for detailed analysis.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Timer Manager</h3>
-        <p>One-shot and looping timers, next-tick scheduling, pause/resume/reset with handle-based management.</p>
-      </div>
-    </div>
-
-    <h2 class="section-title">Tech Stack</h2>
-    <ul class="tech-list">
-      <li>C++20</li>
-      <li>Vulkan</li>
-      <li>CMake</li>
-      <li>SDL</li>
-      <li>GLM</li>
-      <li>Assimp</li>
-      <li>EnTT</li>
-      <li>fmt</li>
-      <li>Optick</li>
-      <li>GitHub Actions CI</li>
-    </ul>
-
-    <h2 class="section-title">Roadmap</h2>
-    <ul class="future-list">
-      <li>Image-based lighting (skybox)</li>
-      <li>Auto exposure</li>
-      <li>GPU frustum culling</li>
-      <li>Optimized scene AABB calculation for shadow maps</li>
-      <li>Soft shadows</li>
-      <li>ImGui integration</li>
-      <li>Animations</li>
-      <li>Post-processing effects</li>
-    </ul>
-
-    <div style="margin-top:64px; padding-top:24px; border-top:1px solid #292929; text-align:center;">
-      <a href="../#projects" class="back-link">Back to Portfolio</a>
-    </div>
-  </div>
+  </main>
 </body>
 
 </html>
