@@ -114,8 +114,7 @@
       border-radius: 2px;
       background-color: var(--color-white);
       opacity: 0;
-      transition: opacity .2s ease;
-    }
+      transition: opacity .2s ease, background-color .2s ease;    }
 
     .pp-nav-links li:hover::before {
       opacity: .3;
@@ -560,29 +559,39 @@
   </main>
   <script>
     (function () {
-      var sections = document.querySelectorAll('.pp-section[id]');
-      var navLinks = document.querySelectorAll('.pp-nav-links li');
-      var last = '';
-      window.addEventListener('scroll', function () {
-        var scrollY = window.scrollY + 200;
-        var current = last;
-        sections.forEach(function (section) {
-          if (scrollY >= section.offsetTop) {
-            current = section.getAttribute('id');
-          }
-        });
-        if (current !== last) {
-          last = current;
-          navLinks.forEach(function (li) {
-            li.classList.remove('active');
-            var href = li.querySelector('a').getAttribute('href');
-            if (href === '#' + current) {
-              li.classList.add('active');
+    var sections = document.querySelectorAll('.pp-section[id]');
+    var navLinks = document.querySelectorAll('.pp-nav-links li');
+    var last = '';
+    var ticking = false;
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          var scrollY = window.scrollY + 200;
+          var current = '';
+
+          sections.forEach(function (section) {
+            if (scrollY >= section.offsetTop) {
+              current = section.getAttribute('id');
             }
           });
-        }
-      });
-    })();
+
+          if (current !== last) {
+            last = current;
+            navLinks.forEach(function (li) {
+              li.classList.remove('active');
+              var href = li.querySelector('a').getAttribute('href');
+              if (href === '#' + current) {
+                li.classList.add('active');
+              }
+            });
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  })();
   </script>
 </body>
 
