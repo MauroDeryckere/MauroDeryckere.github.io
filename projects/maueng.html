@@ -368,7 +368,7 @@
       <h1 class="section-heading-article">MauEng.</h1>
       <p class="lead">3D Game Engine</p>
       <p class="intro">
-        A custom 3D game engine built from scratch with C++20 and Vulkan. Features a fully bindless renderer with deferred shading, an event-driven core, and an ECS built on EnTT. My primary project for exploring engine architecture, GPU-driven rendering, and real-time systems - actively developed with CI via GitHub Actions.
+        A custom 3D game engine built from scratch with C++20 and Vulkan. Features a fully bindless renderer with deferred rendering, an event-driven core, and an ECS built on EnTT. My primary project for exploring engine architecture, GPU-driven rendering, and real-time system.
       </p>
       <div class="project-buttons">
         <a href="https://github.com/MauroDeryckere/MauEng" target="_blank" rel="noopener noreferrer" class="cta"
@@ -403,7 +403,7 @@
         <h2 class="section-heading-article">Demo</h2>
         <p class="sectionHeadingP"></p>
       </div>
-      <p class="pp-subtitle">A small demo scene showcasing the engine's rendering and core systems.</p>
+      <p class="pp-subtitle">A small demo scene showcasing the engine's rendering.</p>
       <div class="pp-video">
         <iframe src="https://www.youtube.com/embed/kbcXu0AuIoM" title="MauEng demo video"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -421,7 +421,7 @@
       <p class="pp-prose">
         The Vulkan renderer uses a fully bindless, indirect drawing architecture. All geometry lives in global vertex
         and index buffers, draw commands are batched with <code>vkCmdDrawIndexedIndirect</code>, and textures are stored in a
-        descriptor array. A deferred shading pipeline with a depth prepass handles lighting efficiently while minimizing overdraw.
+        descriptor array. A deferred rendering pipeline with a depth prepass handles lighting efficiently while minimizing overdraw.
       </p>
 
       <figure>
@@ -433,7 +433,7 @@
       <div class="pp-features">
         <div class="pp-fcard">
           <h3>Bindless Rendering</h3>
-          <p>Global buffers with batched indirect draw commands. Textures in an unbounded descriptor array - no per-draw binding overhead.</p>
+          <p>Global buffers with batched indirect draw commands. Textures in an unbounded descriptor array. No per-draw binding overhead.</p>
         </div>
         <div class="pp-fcard">
           <h3>100K Instances</h3>
