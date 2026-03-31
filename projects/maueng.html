@@ -124,100 +124,19 @@
       line-height: 1.8;
     }
 
-    .pp-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+    .pp-hero .project-tags {
       margin-top: 24px;
     }
 
-    .pp-tags span {
-      font-size: 1.2rem;
-      font-family: "Fira Code";
-      padding: 3px 10px;
-      border-radius: 20px;
-      background: rgba(128, 0, 255, 0.15);
-      color: var(--color-light-purple);
-      letter-spacing: .3px;
-    }
-
-    .pp-actions {
+    .pp-hero .project-buttons {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
     }
 
-    /* Reuse main site .cta button style */
-    .pp-actions .cta {
-      padding: 12px 18px;
-      transition: .2s;
-      border: none;
-      background: 0 0;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      position: relative;
-      text-decoration: none;
-    }
-
-    .pp-actions .cta::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      display: block;
-      border-radius: 50px;
-      background: #2b2f4e;
-      width: 45px;
-      height: 45px;
-      transition: .3s;
-    }
-
-    .pp-actions .cta:hover::before {
-      width: 100%;
-    }
-
-    .pp-actions .cta span {
-      font-size: 1.8rem;
-      font-weight: 600;
-      letter-spacing: .05em;
-      color: var(--color-light-blue);
-      position: relative;
-    }
-
-    .pp-actions .cta:hover span {
-      color: #fff;
-    }
-
-    .pp-actions .cta svg {
-      position: relative;
-      top: 0;
-      margin-left: 10px;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke: var(--color-light-blue);
-      stroke-width: 2;
-      transform: translateX(-5px);
-      transition: .3s;
-    }
-
-    .pp-actions .cta:hover svg {
-      stroke: white;
-      transform: translateX(0);
-    }
-
-    .pp-actions .cta:active {
-      transform: scale(.95);
-    }
-
     /* ---- Sections ---- */
     .pp-section {
       margin-bottom: 32px;
-    }
-
-    .pp-section h2 {
-      margin: 0 0 0;
     }
 
     .pp-section > .pp-subtitle {
@@ -385,7 +304,6 @@
       .pp-hero h1 { font-size: 3.2rem; }
       .pp-hero .lead { font-size: 1.7rem; }
       .pp-hero .intro { font-size: 1.35rem; }
-      .pp-section .section-heading-article { font-size: 2.2rem; }
       .pp-features { grid-template-columns: 1fr; }
       .pp-nav { padding: 0 16px; height: 48px; }
       .pp-nav-links { gap: 4px; }
@@ -413,7 +331,7 @@
       <p class="intro">
         A custom 3D game engine built from scratch with C++20 and Vulkan. Features a fully bindless renderer with deferred shading, an event-driven core, and an ECS built on EnTT. My primary project for exploring engine architecture, GPU-driven rendering, and real-time systems - actively developed with CI via GitHub Actions.
       </p>
-      <div class="pp-actions">
+      <div class="project-buttons">
         <a href="https://github.com/MauroDeryckere/MauEng" target="_blank" rel="noopener noreferrer" class="cta"
           aria-label="View MauEng on GitHub">
           <span>GitHub</span>
@@ -430,12 +348,12 @@
           </svg>
         </a>
       </div>
-      <div class="pp-tags">
-        <span>C++20</span>
-        <span>Vulkan</span>
-        <span>Engine</span>
-        <span>Graphics</span>
-        <span>CMake</span>
+      <div class="project-tags">
+        <span class="project-tag">C++20</span>
+        <span class="project-tag">Vulkan</span>
+        <span class="project-tag">Engine</span>
+        <span class="project-tag">Graphics</span>
+        <span class="project-tag">CMake</span>
       </div>
     </div>
 
