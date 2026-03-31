@@ -103,18 +103,36 @@
       transition: opacity .2s ease;
     }
 
-    .pp-nav-links li:hover::before {
+    .pp-nav-links li::before {
       content: "";
       position: absolute;
       display: block;
       height: 3px;
       bottom: -5px;
       left: 0;
+      width: 100%;
       border-radius: 2px;
       background-color: var(--color-white);
-      width: 100%;
-      opacity: .3;
+      opacity: 0;
       transition: opacity .2s ease;
+    }
+
+    .pp-nav-links li:hover::before {
+      opacity: .3;
+    }
+
+    .pp-nav-links li.active::before {
+      background-color: var(--color-purple);
+      opacity: 1;
+    }
+
+    .pp-nav-links li.active:hover::before {
+      background-color: var(--color-purple);
+      opacity: 1;
+    }
+
+    .pp-nav-links li.active a {
+      color: var(--color-white);
     }
 
     /* ---- Hero ---- */
@@ -130,8 +148,6 @@
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-size: 400% 400%;
-      animation: gradient 3s infinite;
     }
 
     .pp-hero .lead {
@@ -542,6 +558,28 @@
       <a href="../#projects">&larr; Back to Portfolio</a>
     </div>
   </main>
+  <script>
+    (function () {
+      var sections = document.querySelectorAll('.pp-section[id]');
+      var navLinks = document.querySelectorAll('.pp-nav-links li');
+      window.addEventListener('scroll', function () {
+        var scrollY = window.scrollY + 200;
+        var current = '';
+        sections.forEach(function (section) {
+          if (scrollY >= section.offsetTop) {
+            current = section.getAttribute('id');
+          }
+        });
+        navLinks.forEach(function (li) {
+          li.classList.remove('active');
+          var href = li.querySelector('a').getAttribute('href');
+          if (href === '#' + current) {
+            li.classList.add('active');
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>
