@@ -30,55 +30,55 @@
   <noscript><link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" /></noscript>
   <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
     .pp {
       max-width: 860px;
       margin: 0 auto;
-      padding: 120px 24px 80px;
+      padding: 80px 24px 80px;
       color: #c4c4c4;
       font-size: 1.5rem;
       line-height: 1.7;
     }
 
-    .pp a {
-      color: #cf59e6;
-      text-decoration: none;
-      transition: color 0.2s;
+    .pp a { color: #cf59e6; text-decoration: none; transition: color 0.2s; }
+    .pp a:hover { color: #fff; }
+
+    code {
+      background: rgba(128, 0, 255, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
     }
 
-    .pp a:hover {
-      color: #fff;
-    }
-
-    /* Navbar override for project pages */
+    /* ---- Navbar ---- */
     .pp-nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 32px;
-      background: rgba(17, 17, 27, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #292929;
+      padding: 0 32px;
+      height: 56px;
+      background: rgba(17, 17, 27, 0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid #1e1e2e;
     }
 
     .pp-nav-logo {
       font-family: "Fira Code", monospace;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: #fff;
       text-decoration: none;
+      white-space: nowrap;
     }
 
-    .pp-nav-logo:hover {
-      color: #cf59e6;
-    }
+    .pp-nav-logo:hover { color: #cf59e6; }
 
     .pp-nav-links {
       display: flex;
-      gap: 24px;
+      gap: 8px;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -86,49 +86,66 @@
 
     .pp-nav-links a {
       font-family: "Fira Code", monospace;
-      font-size: 1.3rem;
-      color: #9a9a9a;
+      font-size: 1.2rem;
+      color: #6a6a7a;
       text-decoration: none;
-      transition: color 0.2s;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
     }
 
     .pp-nav-links a:hover {
       color: #fff;
+      background: rgba(128, 0, 255, 0.1);
     }
 
-    /* Hero */
+    /* ---- Hero ---- */
     .pp-hero {
-      margin-bottom: 56px;
+      padding: 80px 0 0;
+      margin-bottom: 48px;
+      text-align: center;
     }
 
     .pp-hero h1 {
       font-family: "Fira Code", monospace;
-      font-size: 3.6rem;
+      font-size: 4rem;
       color: #fff;
-      margin: 0 0 8px;
-      letter-spacing: -0.5px;
+      margin: 0 0 12px;
+      letter-spacing: -1px;
     }
 
     .pp-hero .lead {
       font-size: 1.8rem;
       color: #9a9a9a;
-      margin: 0 0 24px;
+      margin: 0 0 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pp-hero .intro {
+      font-size: 1.4rem;
+      color: #7a7a8a;
+      margin: 0 auto 28px;
+      max-width: 640px;
+      line-height: 1.7;
     }
 
     .pp-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 24px;
+      justify-content: center;
+      margin-bottom: 28px;
     }
 
     .pp-tags span {
-      background: rgba(128, 0, 255, 0.12);
-      border: 1px solid rgba(128, 0, 255, 0.25);
+      background: rgba(128, 0, 255, 0.1);
+      border: 1px solid rgba(128, 0, 255, 0.2);
       color: #cf59e6;
       padding: 5px 14px;
       border-radius: 20px;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-family: "Fira Code", monospace;
     }
 
@@ -136,30 +153,33 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      align-items: center;
+      justify-content: center;
     }
 
     .pp-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 12px 24px;
+      padding: 12px 28px;
       border-radius: 50px;
       font-family: "Fira Code", monospace;
       font-size: 1.3rem;
       text-decoration: none;
       transition: all 0.25s ease;
+      cursor: pointer;
     }
 
     .pp-btn-primary {
-      background: #8000ff;
+      background: linear-gradient(135deg, #8000ff, #a040ff);
       color: #fff;
-      border: 1px solid #8000ff;
+      border: none;
+      box-shadow: 0 4px 20px rgba(128, 0, 255, 0.25);
     }
 
     .pp-btn-primary:hover {
-      background: #9933ff;
-      border-color: #9933ff;
+      background: linear-gradient(135deg, #9933ff, #b366ff);
+      box-shadow: 0 6px 28px rgba(128, 0, 255, 0.35);
+      transform: translateY(-1px);
       color: #fff;
     }
 
@@ -172,11 +192,12 @@
     .pp-btn-outline:hover {
       border-color: #8000ff;
       color: #fff;
+      background: rgba(128, 0, 255, 0.06);
     }
 
-    /* Sections */
+    /* ---- Sections ---- */
     .pp-section {
-      margin-bottom: 64px;
+      margin-bottom: 32px;
     }
 
     .pp-section h2 {
@@ -187,7 +208,7 @@
     }
 
     .pp-section > .pp-subtitle {
-      color: #9a9a9a;
+      color: #6a6a7a;
       font-size: 1.4rem;
       margin: 0 0 24px;
     }
@@ -195,10 +216,10 @@
     .pp-divider {
       border: none;
       border-top: 1px solid #1e1e2e;
-      margin: 64px 0;
+      margin: 56px 0;
     }
 
-    /* Video */
+    /* ---- Video ---- */
     .pp-video {
       position: relative;
       width: 100%;
@@ -210,16 +231,14 @@
 
     .pp-video iframe {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       border: none;
     }
 
-    /* Images */
+    /* ---- Images ---- */
     .pp figure {
-      margin: 0 0 40px;
+      margin: 40px 0;
     }
 
     .pp figure img {
@@ -238,50 +257,74 @@
       font-style: italic;
     }
 
-    /* Feature cards */
+    /* ---- Feature cards with expandable detail ---- */
     .pp-features {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 16px;
       margin-top: 24px;
     }
 
     .pp-fcard {
-      background: linear-gradient(135deg, #1a1a29 0%, rgba(27, 27, 40, 0) 100%);
+      background: linear-gradient(135deg, #1a1a29 0%, #14141f 100%);
       border: 1px solid #292929;
       border-radius: 16px;
       padding: 24px;
-      transition: border-color 0.25s, transform 0.25s;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      cursor: default;
     }
 
     .pp-fcard:hover {
       border-color: rgba(128, 0, 255, 0.35);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
     }
 
     .pp-fcard h3 {
       color: #fff;
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       margin: 0 0 8px;
       font-family: "Fira Code", monospace;
     }
 
-    .pp-fcard p {
+    .pp-fcard .pp-fcard-summary {
       font-size: 1.3rem;
       line-height: 1.6;
       margin: 0;
       color: #9a9a9a;
     }
 
-    /* Prose text */
+    .pp-fcard-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, margin 0.35s ease;
+      margin-top: 0;
+    }
+
+    .pp-fcard:hover .pp-fcard-detail,
+    .pp-fcard:focus-within .pp-fcard-detail {
+      max-height: 200px;
+      margin-top: 12px;
+    }
+
+    .pp-fcard-detail p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #7a7a8a;
+      margin: 0;
+      padding-top: 12px;
+      border-top: 1px solid #1e1e2e;
+    }
+
+    /* ---- Prose ---- */
     .pp-prose {
       font-size: 1.5rem;
       line-height: 1.8;
       color: #c4c4c4;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
 
-    /* Tech stack */
+    /* ---- Tech stack ---- */
     .pp-tech {
       display: flex;
       flex-wrap: wrap;
@@ -292,21 +335,22 @@
     }
 
     .pp-tech li {
-      background: rgba(128, 0, 255, 0.08);
+      background: rgba(128, 0, 255, 0.06);
       border: 1px solid #292929;
       padding: 8px 18px;
       border-radius: 50px;
       font-family: "Fira Code", monospace;
       font-size: 1.3rem;
       color: #c4c4c4;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, color 0.2s;
     }
 
     .pp-tech li:hover {
       border-color: rgba(128, 0, 255, 0.3);
+      color: #fff;
     }
 
-    /* Roadmap */
+    /* ---- Roadmap ---- */
     .pp-roadmap {
       list-style: none;
       padding: 0;
@@ -314,28 +358,31 @@
     }
 
     .pp-roadmap li {
-      padding: 12px 0;
+      padding: 14px 0;
       font-size: 1.4rem;
       border-bottom: 1px solid #1e1e2e;
       color: #9a9a9a;
+      transition: color 0.2s;
     }
+
+    .pp-roadmap li:hover { color: #c4c4c4; }
 
     .pp-roadmap li::before {
       content: "";
       display: inline-block;
-      width: 8px;
-      height: 8px;
+      width: 8px; height: 8px;
       border-radius: 50%;
       background: #8000ff;
-      margin-right: 12px;
+      margin-right: 14px;
       vertical-align: middle;
     }
 
-    /* Footer */
+    /* ---- Footer ---- */
     .pp-footer {
       text-align: center;
       padding-top: 32px;
       border-top: 1px solid #1e1e2e;
+      margin-top: 24px;
     }
 
     .pp-footer a {
@@ -343,39 +390,18 @@
       font-size: 1.4rem;
     }
 
-    /* Responsive */
+    /* ---- Responsive ---- */
     @media (max-width: 700px) {
-      .pp {
-        padding: 100px 16px 60px;
-      }
-
-      .pp-hero h1 {
-        font-size: 2.6rem;
-      }
-
-      .pp-hero .lead {
-        font-size: 1.5rem;
-      }
-
-      .pp-section h2 {
-        font-size: 1.9rem;
-      }
-
-      .pp-features {
-        grid-template-columns: 1fr;
-      }
-
-      .pp-nav {
-        padding: 12px 16px;
-      }
-
-      .pp-nav-links {
-        gap: 16px;
-      }
-
-      .pp-nav-links a {
-        font-size: 1.2rem;
-      }
+      .pp { padding: 70px 16px 60px; }
+      .pp-hero { padding-top: 48px; }
+      .pp-hero h1 { font-size: 2.8rem; }
+      .pp-hero .lead { font-size: 1.5rem; }
+      .pp-hero .intro { font-size: 1.3rem; }
+      .pp-section h2 { font-size: 1.9rem; }
+      .pp-features { grid-template-columns: 1fr; }
+      .pp-nav { padding: 0 16px; height: 48px; }
+      .pp-nav-links { gap: 4px; }
+      .pp-nav-links a { font-size: 1.1rem; padding: 4px 8px; }
     }
   </style>
 </head>
@@ -384,8 +410,11 @@
   <nav class="pp-nav">
     <a href="../" class="pp-nav-logo">Mauro Deryckere</a>
     <ul class="pp-nav-links">
-      <li><a href="../#projects">Projects</a></li>
-      <li><a href="https://github.com/MauroDeryckere/MauEng" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="#demo">Demo</a></li>
+      <li><a href="#renderer">Renderer</a></li>
+      <li><a href="#core">Core</a></li>
+      <li><a href="#tech">Tech</a></li>
+      <li><a href="../#projects">Portfolio</a></li>
     </ul>
   </nav>
 
@@ -393,6 +422,11 @@
     <div class="pp-hero">
       <h1>MauEng</h1>
       <p class="lead">A 3D game engine built from scratch with C++20 and Vulkan.</p>
+      <p class="intro">
+        MauEng is my primary project for exploring engine architecture, GPU-driven rendering, and real-time systems.
+        It features a fully bindless Vulkan renderer with deferred shading, an event-driven core, and an ECS built on EnTT.
+        Actively developed with CI via GitHub Actions.
+      </p>
 
       <div class="pp-tags">
         <span>C++20</span>
@@ -406,16 +440,15 @@
       <div class="pp-actions">
         <a href="https://github.com/MauroDeryckere/MauEng" target="_blank" rel="noopener noreferrer"
           class="pp-btn pp-btn-primary">View on GitHub</a>
-        <a href="https://www.youtube.com/watch?v=kbcXu0AuIoM" target="_blank" rel="noopener noreferrer"
-          class="pp-btn pp-btn-outline">Watch Demo</a>
+        <a href="#demo" class="pp-btn pp-btn-outline">Watch Demo</a>
       </div>
     </div>
 
     <hr class="pp-divider" />
 
-    <section class="pp-section">
+    <section class="pp-section" id="demo">
       <h2>Demo</h2>
-      <p class="pp-subtitle">A small demo scene showcasing the engine's rendering and systems.</p>
+      <p class="pp-subtitle">A small demo scene showcasing the engine's rendering and core systems.</p>
       <div class="pp-video">
         <iframe src="https://www.youtube.com/embed/kbcXu0AuIoM" title="MauEng demo video"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -425,12 +458,12 @@
 
     <hr class="pp-divider" />
 
-    <section class="pp-section">
+    <section class="pp-section" id="renderer">
       <h2>Renderer</h2>
       <p class="pp-prose">
-        The Vulkan renderer uses a fully bindless, indirect drawing architecture. All geometry is stored in global vertex
-        and index buffers, draw commands are batched with <code>vkCmdDrawIndexedIndirect</code>, and textures live in a
-        descriptor array. A deferred shading pipeline with a depth prepass handles lighting efficiently.
+        The Vulkan renderer uses a fully bindless, indirect drawing architecture. All geometry lives in global vertex
+        and index buffers, draw commands are batched with <code>vkCmdDrawIndexedIndirect</code>, and textures are stored in a
+        descriptor array. A deferred shading pipeline with a depth prepass handles lighting efficiently while minimizing overdraw.
       </p>
 
       <figure>
@@ -440,29 +473,47 @@
       </figure>
 
       <div class="pp-features">
-        <div class="pp-fcard">
+        <div class="pp-fcard" tabindex="0">
           <h3>Bindless Rendering</h3>
-          <p>Global buffers with batched indirect draw commands. Textures in a descriptor array - no per-draw binding overhead.</p>
+          <p class="pp-fcard-summary">Global buffers with batched indirect draw commands and descriptor arrays.</p>
+          <div class="pp-fcard-detail">
+            <p>Textures are stored in an unbounded descriptor array. Draw calls use vkCmdDrawIndexedIndirect to avoid per-draw binding overhead entirely.</p>
+          </div>
         </div>
-        <div class="pp-fcard">
+        <div class="pp-fcard" tabindex="0">
           <h3>100K Instances</h3>
-          <p>Tested with 100,000 instanced meshes at 60 FPS. Meshes are split into instanced submeshes automatically.</p>
+          <p class="pp-fcard-summary">Tested with 100,000 instanced meshes running at 60 FPS.</p>
+          <div class="pp-fcard-detail">
+            <p>A 1425-index, 311-vertex gun mesh instanced 100K times. Main thread sleeping ~10ms with GPU headroom to spare on an RTX 3060.</p>
+          </div>
         </div>
-        <div class="pp-fcard">
+        <div class="pp-fcard" tabindex="0">
           <h3>Deferred Shading</h3>
-          <p>G-buffer pipeline with depth prepass to minimize overdraw. Point and directional lighting with configurable exposure.</p>
+          <p class="pp-fcard-summary">G-buffer pipeline with depth prepass to minimize overdraw.</p>
+          <div class="pp-fcard-detail">
+            <p>Point and directional lighting resolved in screen space. Depth prepass runs first to reject occluded fragments before expensive shading.</p>
+          </div>
         </div>
-        <div class="pp-fcard">
+        <div class="pp-fcard" tabindex="0">
           <h3>Asset Pipeline</h3>
-          <p>Assimp integration for all major 3D formats. File-based material loading with default and invalid material fallbacks.</p>
+          <p class="pp-fcard-summary">Assimp integration supporting all major 3D formats.</p>
+          <div class="pp-fcard-detail">
+            <p>Meshes are split into instanced submeshes automatically. Materials loaded from file with default and invalid fallbacks to prevent GPU branching.</p>
+          </div>
         </div>
-        <div class="pp-fcard">
+        <div class="pp-fcard" tabindex="0">
           <h3>Tone Mapping</h3>
-          <p>Multiple tone mapping modes with adjustable exposure. Custom and automatic exposure controls.</p>
+          <p class="pp-fcard-summary">Multiple tone mapping modes with adjustable exposure.</p>
+          <div class="pp-fcard-detail">
+            <p>Custom and automatic exposure controls. Toggle between different tone mappers at runtime via keybind.</p>
+          </div>
         </div>
-        <div class="pp-fcard">
+        <div class="pp-fcard" tabindex="0">
           <h3>Debug Rendering</h3>
-          <p>Runtime line, sphere, and light visualization API. One-liner debug draws for rapid iteration.</p>
+          <p class="pp-fcard-summary">Runtime line, sphere, and light visualization API.</p>
+          <div class="pp-fcard-detail">
+            <p>One-liner debug draws for rapid iteration. Visualize point lights as spheres, directional lights as arrows, and arbitrary debug geometry.</p>
+          </div>
         </div>
       </div>
 
@@ -482,7 +533,7 @@
 
     <hr class="pp-divider" />
 
-    <section class="pp-section">
+    <section class="pp-section" id="core">
       <h2>Engine Core</h2>
       <p class="pp-prose">
         Beyond the renderer, MauEng includes a set of core systems designed for flexibility and ease of use.
@@ -491,36 +542,54 @@
       </p>
 
       <div class="pp-features">
-        <div class="pp-fcard">
+        <div class="pp-fcard" tabindex="0">
           <h3>Event System</h3>
-          <p>Delegates with immediate and queued broadcasts, lambda and member function binding, safe delayed unsubscription.</p>
+          <p class="pp-fcard-summary">Delegates with immediate and queued broadcasts.</p>
+          <div class="pp-fcard-detail">
+            <p>Lambda and member function binding. Delayed unsubscription prevents dangling pointer issues during broadcast iteration.</p>
+          </div>
         </div>
-        <div class="pp-fcard">
+        <div class="pp-fcard" tabindex="0">
           <h3>Input System</h3>
-          <p>Action-based input with mapping contexts, keyboard and mouse support, runtime rebinding.</p>
+          <p class="pp-fcard-summary">Action-based input with mapping contexts and runtime rebinding.</p>
+          <div class="pp-fcard-detail">
+            <p>Keyboard and mouse support. Multiple mapping contexts that can be swapped at runtime. Action queries via player interface.</p>
+          </div>
         </div>
-        <div class="pp-fcard">
+        <div class="pp-fcard" tabindex="0">
           <h3>Component System</h3>
-          <p>EnTT-backed ECS with a wrapper providing the engine's interface for entities, components, and queries.</p>
+          <p class="pp-fcard-summary">EnTT-backed ECS for entities, components, and queries.</p>
+          <div class="pp-fcard-detail">
+            <p>Engine wrapper around EnTT providing a consistent interface. Supports almost all EnTT functionality through the abstraction layer.</p>
+          </div>
         </div>
-        <div class="pp-fcard">
+        <div class="pp-fcard" tabindex="0">
           <h3>Logging</h3>
-          <p>Multi-level, multi-category logger with console and file output, configurable rotation and color coding.</p>
+          <p class="pp-fcard-summary">Multi-level, multi-category logger with console and file output.</p>
+          <div class="pp-fcard-detail">
+            <p>Configurable file rotation, color-coded console output, per-category priority filtering. Timestamped file logs with single-backup rotation.</p>
+          </div>
         </div>
-        <div class="pp-fcard">
+        <div class="pp-fcard" tabindex="0">
           <h3>Profiling</h3>
-          <p>Built-in profiler outputting to Chrome tracing format with optional Optick integration.</p>
+          <p class="pp-fcard-summary">Chrome tracing output with optional Optick integration.</p>
+          <div class="pp-fcard-detail">
+            <p>Macro-based scoped profiling. Press F1 to capture a frame. Output compatible with chrome://tracing and Optick visualizer.</p>
+          </div>
         </div>
-        <div class="pp-fcard">
+        <div class="pp-fcard" tabindex="0">
           <h3>Timer Manager</h3>
-          <p>One-shot and looping timers, next-tick scheduling, pause/resume/reset with handle-based management.</p>
+          <p class="pp-fcard-summary">One-shot and looping timers with handle-based management.</p>
+          <div class="pp-fcard-detail">
+            <p>Next-tick scheduling, pause/resume/reset, remaining time queries. Timer removal is safe during callback execution.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <hr class="pp-divider" />
 
-    <section class="pp-section">
+    <section class="pp-section" id="tech">
       <h2>Tech Stack</h2>
       <ul class="pp-tech">
         <li>C++20</li>
@@ -538,7 +607,7 @@
 
     <hr class="pp-divider" />
 
-    <section class="pp-section">
+    <section class="pp-section" id="roadmap">
       <h2>Roadmap</h2>
       <p class="pp-subtitle">Planned features for upcoming development.</p>
       <ul class="pp-roadmap">
