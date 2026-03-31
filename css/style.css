@@ -2305,9 +2305,6 @@ code {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-size: 400% 400%;
-    -webkit-animation: 3s infinite gradient;
-    animation: 3s infinite gradient;
 }
 
 .pp-hero .lead {
@@ -2358,6 +2355,11 @@ code {
     overflow: hidden;
     border: 1px solid #292929;
     box-shadow: 0 0 40px rgba(128, 0, 255, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.pp-video:hover {
+    box-shadow: 0 8px 40px rgba(128, 0, 255, 0.15);
 }
 
 .pp-video iframe {
@@ -2380,7 +2382,7 @@ code {
     transition: box-shadow 0.3s ease;
 }
 
-.pp figure img:hover {
+.pp figure:hover img {
     box-shadow: 0 8px 40px rgba(128, 0, 255, 0.15);
 }
 
