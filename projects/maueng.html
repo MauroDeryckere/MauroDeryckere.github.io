@@ -562,21 +562,25 @@
     (function () {
       var sections = document.querySelectorAll('.pp-section[id]');
       var navLinks = document.querySelectorAll('.pp-nav-links li');
+      var last = '';
       window.addEventListener('scroll', function () {
         var scrollY = window.scrollY + 200;
-        var current = '';
+        var current = last;
         sections.forEach(function (section) {
           if (scrollY >= section.offsetTop) {
             current = section.getAttribute('id');
           }
         });
-        navLinks.forEach(function (li) {
-          li.classList.remove('active');
-          var href = li.querySelector('a').getAttribute('href');
-          if (href === '#' + current) {
-            li.classList.add('active');
-          }
-        });
+        if (current !== last) {
+          last = current;
+          navLinks.forEach(function (li) {
+            li.classList.remove('active');
+            var href = li.querySelector('a').getAttribute('href');
+            if (href === '#' + current) {
+              li.classList.add('active');
+            }
+          });
+        }
       });
     })();
   </script>
