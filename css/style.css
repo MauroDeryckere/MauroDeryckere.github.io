@@ -1105,7 +1105,8 @@ noscript {
 }
 
 .tech-stack-box img {
-    width: 80%
+    width: 80%;
+    height: auto
 }
 
 .tech-stack-box:hover .tooltip {
