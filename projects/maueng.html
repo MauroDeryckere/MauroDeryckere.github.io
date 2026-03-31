@@ -107,13 +107,7 @@
 
     .pp-hero h1 {
       font-size: 4.5rem;
-      font-family: "Fira Code";
-      font-weight: 500;
       margin: 0;
-      background-image: linear-gradient(90deg, var(--static-heading-gradient-blue), var(--static-heading-gradient-pink));
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
 
     .pp-hero .lead {
@@ -223,14 +217,7 @@
     }
 
     .pp-section h2 {
-      font-size: 3rem;
-      font-family: "Fira Code";
-      font-weight: 500;
-      margin: 0 0 8px;
-      background-image: linear-gradient(90deg, var(--static-heading-gradient-blue), var(--static-heading-gradient-pink));
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      margin: 0 0 0;
     }
 
     .pp-section > .pp-subtitle {
@@ -398,7 +385,7 @@
       .pp-hero h1 { font-size: 3.2rem; }
       .pp-hero .lead { font-size: 1.7rem; }
       .pp-hero .intro { font-size: 1.35rem; }
-      .pp-section h2 { font-size: 2.2rem; }
+      .pp-section .section-heading-article { font-size: 2.2rem; }
       .pp-features { grid-template-columns: 1fr; }
       .pp-nav { padding: 0 16px; height: 48px; }
       .pp-nav-links { gap: 4px; }
@@ -421,7 +408,7 @@
 
   <main class="pp">
     <div class="pp-hero">
-      <h1>MauEng.</h1>
+      <h1 class="section-heading-article">MauEng.</h1>
       <p class="lead">3D Game Engine</p>
       <p class="intro">
         A custom 3D game engine built from scratch with C++20 and Vulkan. Features a fully bindless renderer with deferred shading, an event-driven core, and an ECS built on EnTT. My primary project for exploring engine architecture, GPU-driven rendering, and real-time systems - actively developed with CI via GitHub Actions.
@@ -455,7 +442,8 @@
     <hr class="pp-divider" />
 
     <section class="pp-section" id="demo">
-      <h2>Demo</h2>
+      <h2 class="section-heading-article">Demo</h2>
+      <p class="sectionHeadingP"></p>
       <p class="pp-subtitle">A small demo scene showcasing the engine's rendering and core systems.</p>
       <div class="pp-video">
         <iframe src="https://www.youtube.com/embed/kbcXu0AuIoM" title="MauEng demo video"
@@ -467,7 +455,8 @@
     <hr class="pp-divider" />
 
     <section class="pp-section" id="renderer">
-      <h2>Renderer</h2>
+      <h2 class="section-heading-article">Renderer</h2>
+      <p class="sectionHeadingP"></p>
       <p class="pp-prose">
         The Vulkan renderer uses a fully bindless, indirect drawing architecture. All geometry lives in global vertex
         and index buffers, draw commands are batched with <code>vkCmdDrawIndexedIndirect</code>, and textures are stored in a
@@ -524,7 +513,8 @@
     <hr class="pp-divider" />
 
     <section class="pp-section" id="core">
-      <h2>Engine Core</h2>
+      <h2 class="section-heading-article">Engine Core</h2>
+      <p class="sectionHeadingP"></p>
       <p class="pp-prose">
         Beyond the renderer, MauEng includes a set of core systems designed for flexibility and ease of use.
         The event system supports both immediate and queued broadcasts with safe delayed unsubscription.
@@ -562,7 +552,8 @@
     <hr class="pp-divider" />
 
     <section class="pp-section" id="tech">
-      <h2>Tech Stack</h2>
+      <h2 class="section-heading-article">Tech Stack</h2>
+      <p class="sectionHeadingP"></p>
       <ul class="pp-tech">
         <li>C++20</li>
         <li>Vulkan</li>
@@ -580,7 +571,8 @@
     <hr class="pp-divider" />
 
     <section class="pp-section" id="roadmap">
-      <h2>Roadmap</h2>
+      <h2 class="section-heading-article">Roadmap</h2>
+      <p class="sectionHeadingP"></p>
       <p class="pp-subtitle">Planned features for upcoming development.</p>
       <ul class="pp-roadmap">
         <li>Image-based lighting (skybox)</li>
