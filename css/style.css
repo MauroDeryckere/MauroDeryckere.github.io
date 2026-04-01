@@ -298,7 +298,12 @@ header {
     justify-content: center;
     overflow-y: hidden;
     background-image: url(../assets/icons/preloader-spinner.svg);
-    background-size: 10%
+    background-size: 10%;
+    animation: preloader-out 0.3s ease-out 0.8s forwards
+}
+
+@keyframes preloader-out {
+    to { opacity: 0; pointer-events: none; visibility: hidden }
 }
 
 .navbar,

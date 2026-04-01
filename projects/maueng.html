@@ -247,8 +247,12 @@
       <a href="../#projects">&larr; Back to Portfolio</a>
     </footer>
   </main>
-  <script src="../js/aos.js"></script>
-  <script>AOS.init({ once: true });</script>
+  <script src="../js/aos.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({ once: true });
+    });
+  </script>
   <script>
     (function () {
       var sections = document.querySelectorAll('.pp-section[id]');
@@ -263,7 +267,7 @@
         });
       }
 
-      cacheOffsets();
+      document.addEventListener('DOMContentLoaded', cacheOffsets);
       window.addEventListener('resize', cacheOffsets);
 
       window.addEventListener('scroll', function () {
