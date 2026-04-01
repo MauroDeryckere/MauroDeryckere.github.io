@@ -306,6 +306,11 @@ header {
     to { opacity: 0; pointer-events: none; visibility: hidden }
 }
 
+@keyframes hero-fade-up {
+    from { opacity: 0; transform: translateY(20px) }
+    to   { opacity: 1; transform: translateY(0) }
+}
+
 .navbar,
 noscript {
     display: flex;
@@ -791,6 +796,26 @@ noscript {
     padding-top: 30px;
     color: var(--color-ddd-color);
     line-height: 1.6
+}
+
+#name {
+    opacity: 0;
+    animation: hero-fade-up 0.6s ease forwards
+}
+
+#hello-friend {
+    opacity: 0;
+    animation: hero-fade-up 0.6s ease 0.1s forwards
+}
+
+.landing-page-container .info-para {
+    opacity: 0;
+    animation: hero-fade-up 0.6s ease 0.2s forwards
+}
+
+.landing-page-container .contact-btn-div {
+    opacity: 0;
+    animation: hero-fade-up 0.6s ease 0.3s forwards
 }
 
 .contact-btn-div {
