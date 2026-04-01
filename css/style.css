@@ -1158,8 +1158,12 @@ noscript {
     border-color: rgba(128, 0, 255, 0.4)
 }
 
+.tech-stack-box picture {
+    width: 80%
+}
+
 .tech-stack-box img {
-    width: 80%;
+    width: 100%;
     height: auto
 }
 
