@@ -61,7 +61,7 @@
             <polyline points="8 1 12 5 8 9"></polyline>
           </svg>
         </a>
-        <a href="#demo" class="cta" aria-label="Watch MauEng demo">
+        <a href="#demo" class="cta" aria-label="Watch Demo - MauEng engine">
           <span>Watch Demo</span>
           <svg viewBox="0 0 13 10" height="10px" width="15px">
             <path d="M1,5 L11,5"></path>
@@ -107,8 +107,13 @@
       </p>
 
       <figure data-aos="fade-up">
-        <img src="../assets/images/projects/maueng/Pipeline.png" alt="MauEng Vulkan rendering pipeline overview"
-          width="900" height="334" loading="lazy" />
+        <picture>
+          <source type="image/webp"
+            srcset="../assets/images/projects/maueng/Pipeline-600.webp 600w, ../assets/images/projects/maueng/Pipeline.webp 900w"
+            sizes="(max-width: 700px) calc(100vw - 32px), min(812px, calc(100vw - 48px))" />
+          <img src="../assets/images/projects/maueng/Pipeline.png" alt="MauEng Vulkan rendering pipeline overview"
+            width="900" height="334" loading="lazy" />
+        </picture>
         <figcaption>Rendering pipeline overview</figcaption>
       </figure>
 
@@ -239,9 +244,11 @@
       <a href="../#projects">&larr; Back to Portfolio</a>
     </div>
   </main>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
   <script>
-    AOS.init({ once: true });
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({ once: true });
+    });
   </script>
   <script>
     (function () {
