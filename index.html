@@ -57,6 +57,7 @@
 </head>
 
 <body class="body">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLVHNDS6"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -66,7 +67,7 @@
     <source src="assets/audio/background.mp3" type="audio/mp3" />
   </audio>
   <div id="preloader"></div>
-  <noscript>Allow Javascript</noscript>
+  <noscript>This site requires JavaScript. Please enable it in your browser settings.</noscript>
 
   <header>
     <div class="cursor-inner" id="cursor-inner"></div>
@@ -103,7 +104,7 @@
   </header>
   <!-- header ends here -->
 
-  <main>
+  <main id="main-content">
     <!-- hamburger -->
     <div class="hamburger" id="hamburger" data-aos="fade">
       <div class="hamburgerbase">
@@ -164,7 +165,7 @@
           <span class="jello">.</span>
         </h1>
 
-        <article id="hello-friend" data-aos="fade-up" data-aos-delay="400">
+        <div id="hello-friend" data-aos="fade-up" data-aos-delay="400">
           <div>
             <span class="jello">Engine</span>
           </div>
@@ -176,7 +177,7 @@
           <div>
             <span class="jello">Programmer</span>
           </div>
-        </article>
+        </div>
         <p class="info-para" data-aos="fade-up" data-aos-delay="600">
           Engine & Graphics Programmer building MauEng, a 3D game engine with Vulkan. I work with modern C++ daily and constantly explore GPU programming, multi-threaded systems, and engine architecture. I've built an Assembly 6502 game that runs on real NES hardware and created cross-platform profiling tools.
         </p>
@@ -210,10 +211,10 @@
     <section class="about-section-container" id="about" data-aos="fade-up">
       <div class="about-section">
         <div class="section-heading">
-          <h2 class="section-heading-article" tabindex="0" aria-label="About me heading">
+          <h2 class="section-heading-article">
             About Me
           </h2>
-          <p class="sectionHeadingP"></p>
+          <p class="sectionHeadingP" aria-hidden="true"></p>
         </div>
 
         <div class="info-dp-section">
@@ -253,10 +254,10 @@
     <section class="projects-section-container" id="projects">
       <div class="projects-section-div">
         <div class="section-heading" data-aos="fade-up">
-          <h2 class="section-heading-article" tabindex="0" aria-label="My projects starts from here">
-           Projects
+          <h2 class="section-heading-article">
+            Projects
           </h2>
-          <p class="sectionHeadingP"></p>
+          <p class="sectionHeadingP" aria-hidden="true"></p>
         </div>
         <div class="project-filter-bar" data-aos="fade-up">
           <button class="filter-btn active" data-filter="all">All</button>
@@ -572,15 +573,14 @@
     <section class="skills-section-container" id="skills">
       <div class="skills-section">
         <div class="section-heading" data-aos="fade-up">
-          <h2 class="section-heading-article" tabindex="0" aria-label="skills heading">
+          <h2 class="section-heading-article">
             Skills
           </h2>
-          <p class="sectionHeadingP"></p>
+          <p class="sectionHeadingP" aria-hidden="true"></p>
         </div>
 
         <div class="frontend-dev-section">
-          <h3 class="frontend-dev-heading" data-aos="fade-up" tabindex="0"
-            aria-label="Tech stack and skills">
+          <h3 class="frontend-dev-heading" data-aos="fade-up">
             Tech Stack
           </h3>
           <ul class="tech-stack-wrapper">
@@ -658,8 +658,8 @@
   <!-- main ends here -->
 
   <footer id="footer">
-    <button class="fas" id="backtotopbutton" onclick="scrolltoTopfunction()">
-      <article aria-label="Back to top">&#8592;BACK TO TOP</article>
+    <button class="fas" id="backtotopbutton" onclick="scrolltoTopfunction()" aria-label="Back to top">
+      <span>&#8592;BACK TO TOP</span>
     </button>
     <div class="footer-background">
       <div class="footer-blob"></div>
@@ -667,13 +667,11 @@
     <div class="footer-foreground">
       <div class="footercontainer">
         <div class="two-words">
-          <article tabindex="0" aria-label="Interested? Get in touch">
-            Interested?
-          </article>
+          <p>Interested?</p>
         </div>
         <div class="social-media-container">
           <div class="getintouch-heading">
-            <article>Get In Touch</article>
+            <p>Get In Touch</p>
           </div>
           <div class="logos">
             <a href="https://www.linkedin.com/in/Mauro-Deryckere" target="_blank" rel="noopener noreferrer"

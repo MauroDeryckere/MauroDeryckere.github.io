@@ -38,7 +38,8 @@
 </head>
 
 <body class="body">
-  <nav class="pp-nav">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav class="pp-nav" aria-label="Page navigation">
     <a href="../" class="pp-nav-logo">Mauro Deryckere</a>
     <ul class="pp-nav-links">
       <li><a href="#demo">Demo</a></li>
@@ -49,7 +50,7 @@
     </ul>
   </nav>
 
-  <main class="pp">
+  <main class="pp" id="main-content">
     <div class="pp-hero" data-aos="fade-up">
       <h1 class="section-heading-article"><span class="jello">M</span><span class="jello">a</span><span class="jello">u</span><span class="jello">E</span><span class="jello">n</span><span class="jello">g</span><span class="jello">.</span></h1>
       <p class="lead">3D Game Engine</p>
@@ -87,7 +88,7 @@
     <section class="pp-section" id="demo" data-aos="fade-up">
       <div class="section-heading">
         <h2 class="section-heading-article">Demo</h2>
-        <p class="sectionHeadingP"></p>
+        <p class="sectionHeadingP" aria-hidden="true"></p>
       </div>
       <p class="pp-subtitle">A small demo scene showcasing the engine's rendering.</p>
       <div class="pp-video">
@@ -102,7 +103,7 @@
     <section class="pp-section" id="renderer" data-aos="fade-up">
       <div class="section-heading">
         <h2 class="section-heading-article">Renderer</h2>
-        <p class="sectionHeadingP"></p>
+        <p class="sectionHeadingP" aria-hidden="true"></p>
       </div>
       <p class="pp-prose">
         The Vulkan renderer uses a fully bindless, indirect drawing architecture. All geometry lives in global vertex
@@ -167,7 +168,7 @@
     <section class="pp-section" id="core" data-aos="fade-up">
       <div class="section-heading">
         <h2 class="section-heading-article">Engine Core</h2>
-        <p class="sectionHeadingP"></p>
+        <p class="sectionHeadingP" aria-hidden="true"></p>
       </div>
       <p class="pp-prose">
         Beyond the renderer, MauEng includes a set of core systems designed for flexibility and ease of use.
@@ -208,7 +209,7 @@
     <section class="pp-section" id="tech" data-aos="fade-up">
       <div class="section-heading">
         <h2 class="section-heading-article">Tech Stack</h2>
-        <p class="sectionHeadingP"></p>
+        <p class="sectionHeadingP" aria-hidden="true"></p>
       </div>
       <ul class="pp-tech">
         <li>C++20</li>
@@ -229,7 +230,7 @@
     <section class="pp-section" id="roadmap" data-aos="fade-up">
       <div class="section-heading">
         <h2 class="section-heading-article">Roadmap</h2>
-        <p class="sectionHeadingP"></p>
+        <p class="sectionHeadingP" aria-hidden="true"></p>
       </div>
       <p class="pp-subtitle">Planned features for upcoming development.</p>
       <ul class="pp-roadmap">
@@ -244,9 +245,9 @@
       </ul>
     </section>
 
-    <div class="pp-footer">
+    <footer class="pp-footer">
       <a href="../#projects">&larr; Back to Portfolio</a>
-    </div>
+    </footer>
   </main>
   <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
   <script>
