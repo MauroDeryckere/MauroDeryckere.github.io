@@ -716,7 +716,7 @@
 
   <script src="js/main.js" defer></script>
   <script src="js/aos.js" defer></script>
-  <script>document.addEventListener('DOMContentLoaded',function(){AOS.init({once:true});});</script>
+  <script>document.addEventListener('DOMContentLoaded',function(){'requestIdleCallback'in window?requestIdleCallback(function(){AOS.init({once:true})}):AOS.init({once:true});});</script>
 
   <script>
     function openURL() {
