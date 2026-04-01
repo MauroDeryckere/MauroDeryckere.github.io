@@ -39,14 +39,12 @@
   <title>Mauro Deryckere | Portfolio</title>
   <link rel="canonical" href="https://mauroderyckere.github.io/" />
   <link rel="icon" type="image/x-icon" href="assets/images/site/logo.png" />
-  <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin />
-  <link rel="preconnect" href="https://i.ytimg.com" crossorigin />
-  <!-- aos cdn (non-blocking) -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /></noscript>
+  <!-- aos (local) -->
+  <link rel="stylesheet" href="css/aos.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="css/aos.css" /></noscript>
   <!-- stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
   <!-- google fonts (non-blocking) -->
@@ -77,22 +75,22 @@
       <div class="hey">Hi!</div>
       <div class="navbar-tabs" id="navbar-tabs">
         <ul class="navbar-tabs-ul">
-          <li class="home activeThistab navbar-tabs-li" data-aos="fade-down" data-aos-delay="100">
+          <li class="home activeThistab navbar-tabs-li">
             <a href="#home" tabindex="0" aria-label="Home menu button">
               Home
             </a>
           </li>
-          <li class="about navbar-tabs-li" data-aos="fade-down" data-aos-delay="300">
+          <li class="about navbar-tabs-li">
             <a href="#about" aria-label="about menu button">
               About Me
             </a>
           </li>
-          <li class="projects navbar-tabs-li" data-aos="fade-down" data-aos-delay="500">
+          <li class="projects navbar-tabs-li">
             <a href="#projects" aria-label="projects menu button">
               Projects
             </a>
           </li>
-          <li class="skills navbar-tabs-li" data-aos="fade-down" data-aos-delay="700">
+          <li class="skills navbar-tabs-li">
             <a href="#skills" aria-label="skills menu button">
               Skills
             </a>
@@ -106,7 +104,7 @@
 
   <main id="main-content">
     <!-- hamburger -->
-    <div class="hamburger" id="hamburger" data-aos="fade">
+    <div class="hamburger" id="hamburger">
       <div class="hamburgerbase">
         <button id="hamburger-button" onclick="hamburgerMenu()" tabindex="0" aria-label="Menu Button">
           <span class="burger-bar" id="burger-bar1"></span>
@@ -146,7 +144,7 @@
       <div class="blob"></div>
 
       <div class="text-content">
-        <h1 id="name" data-aos="fade-up" data-aos-delay="200">
+        <h1 id="name">
           <span class="jello">M</span>
           <span class="jello">a</span>
           <span class="jello">u</span>
@@ -165,7 +163,7 @@
           <span class="jello">.</span>
         </h1>
 
-        <div id="hello-friend" data-aos="fade-up" data-aos-delay="400">
+        <div id="hello-friend">
           <div>
             <span class="jello">Engine</span>
           </div>
@@ -178,13 +176,13 @@
             <span class="jello">Programmer</span>
           </div>
         </div>
-        <p class="info-para" data-aos="fade-up" data-aos-delay="600">
+        <p class="info-para">
           Engine & Graphics Programmer building MauEng, a 3D game engine with Vulkan. I work with modern C++ daily and constantly explore GPU programming, multi-threaded systems, and engine architecture. I've built an Assembly 6502 game that runs on real NES hardware and created cross-platform profiling tools.
         </p>
-        <p class="info-para" data-aos="fade-up" data-aos-delay="600">
+        <p class="info-para">
           Graduating in September 2026 and open for engine, graphics, or systems programming positions.
         </p>
-        <div class="contact-btn-div" data-aos="fade-up" data-aos-delay="800">
+        <div class="contact-btn-div">
           <a href="mailto:mauro.deryckere@gmail.com" tabindex="0" class="letsTalkBtn" role="button">
               <p class="letsTalkBtn-text">Contact Me</p>
               <span class="letsTalkBtn-BG"></span>
@@ -699,12 +697,8 @@
   <!-- footer ends here -->
 
   <script src="js/main.js" defer></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      AOS.init({ once: true });
-    });
-  </script>
+  <script src="js/aos.js"></script>
+  <script>AOS.init({ once: true });</script>
 
   <script>
     function openURL() {

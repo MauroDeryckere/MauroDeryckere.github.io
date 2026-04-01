@@ -22,14 +22,12 @@
   <title>MauEng - 3D Game Engine | Mauro Deryckere</title>
   <link rel="canonical" href="https://mauroderyckere.github.io/projects/maueng.html" />
   <link rel="icon" type="image/x-icon" href="../assets/images/site/logo.png" />
-  <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin />
-  <link rel="preconnect" href="https://i.ytimg.com" crossorigin />
   <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /></noscript>
+  <link rel="stylesheet" href="../css/aos.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="../css/aos.css" /></noscript>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
     media="print" onload="this.media='all'" />
@@ -51,7 +49,7 @@
   </nav>
 
   <main class="pp" id="main-content">
-    <div class="pp-hero" data-aos="fade-up">
+    <div class="pp-hero">
       <h1 class="section-heading-article"><span class="jello">M</span><span class="jello">a</span><span class="jello">u</span><span class="jello">E</span><span class="jello">n</span><span class="jello">g</span><span class="jello">.</span></h1>
       <p class="lead">3D Game Engine</p>
       <p class="intro">
@@ -249,18 +247,24 @@
       <a href="../#projects">&larr; Back to Portfolio</a>
     </footer>
   </main>
-  <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      AOS.init({ once: true });
-    });
-  </script>
+  <script src="../js/aos.js"></script>
+  <script>AOS.init({ once: true });</script>
   <script>
     (function () {
       var sections = document.querySelectorAll('.pp-section[id]');
       var navLinks = document.querySelectorAll('.pp-nav-links li');
       var last = '';
       var ticking = false;
+      var sectionOffsets = [];
+
+      function cacheOffsets() {
+        sectionOffsets = Array.prototype.map.call(sections, function (s) {
+          return { id: s.getAttribute('id'), top: s.offsetTop };
+        });
+      }
+
+      cacheOffsets();
+      window.addEventListener('resize', cacheOffsets);
 
       window.addEventListener('scroll', function () {
         if (!ticking) {
@@ -268,10 +272,8 @@
             var scrollY = window.scrollY + 200;
             var current = '';
 
-            sections.forEach(function (section) {
-              if (scrollY >= section.offsetTop) {
-                current = section.getAttribute('id');
-              }
+            sectionOffsets.forEach(function (s) {
+              if (scrollY >= s.top) { current = s.id; }
             });
 
             if (current !== last) {
@@ -279,9 +281,7 @@
               navLinks.forEach(function (li) {
                 li.classList.remove('active');
                 var href = li.querySelector('a').getAttribute('href');
-                if (href === '#' + current) {
-                  li.classList.add('active');
-                }
+                if (href === '#' + current) { li.classList.add('active'); }
               });
             }
             ticking = false;
