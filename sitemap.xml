@@ -1,45 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://mauroderyckere.github.io</loc>
-        <lastmod>2026-03-23</lastmod>
+        <loc>https://mauroderyckere.github.io/</loc>
+        <lastmod>2026-04-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://github.com/MauroDeryckere/MauEng</loc>
-        <lastmod>2026-03-18</lastmod>
+        <loc>https://mauroderyckere.github.io/projects/maueng.html</loc>
+        <lastmod>2026-04-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://github.com/MauroDeryckere/NES-Maze-Crusade</loc>
-        <lastmod>2026-03-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://github.com/MauroDeryckere/2D-Flowfield-Research-Project</loc>
-        <lastmod>2025-09-06</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://mauroderyckere.itch.io/bumpurrcars</loc>
-        <lastmod>2025-10-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://github.com/MauroDeryckere/Profiler</loc>
-        <lastmod>2026-03-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://github.com/MauroDeryckere/UUID</loc>
-        <lastmod>2026-03-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
     </url>
 </urlset>
