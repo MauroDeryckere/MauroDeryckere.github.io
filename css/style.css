@@ -2265,7 +2265,7 @@ code {
     margin: 0 auto;
     padding: 80px 24px 80px;
     color: #c4c4c4;
-    font-size: 1.5rem;
+    font-size: 2rem;
     line-height: 1.7;
 }
 
@@ -2489,13 +2489,13 @@ code {
 
 .pp-fcard h3 {
     color: #fff;
-    font-size: 1.45rem;
+    font-size: 1.8rem;
     margin: 0 0 8px;
     font-family: "Fira Code", monospace;
 }
 
 .pp-fcard p {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     line-height: 1.6;
     margin: 0;
     color: #9a9a9a;
@@ -2503,7 +2503,7 @@ code {
 
 /* ---- Prose ---- */
 .pp-prose {
-    font-size: 1.5rem;
+    font-size: 2rem;
     line-height: 1.8;
     color: #c4c4c4;
     margin-bottom: 24px;
@@ -2524,7 +2524,7 @@ code {
     border: 1px solid #292929;
     padding: 8px 18px;
     border-radius: 50px;
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     color: #c4c4c4;
     transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
@@ -2544,7 +2544,7 @@ code {
 
 .pp-roadmap li {
     padding: 14px 0;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     border-bottom: 1px solid #1e1e2e;
     color: #9a9a9a;
     transition: color 0.2s, padding-left 0.2s;
