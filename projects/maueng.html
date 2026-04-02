@@ -46,7 +46,36 @@
       <li><a href="#tech">Tech</a></li>
       <li><a href="../#projects">Portfolio</a></li>
     </ul>
+    <div class="hamburger" id="hamburger">
+      <div class="hamburgerbase">
+        <button id="hamburger-button" onclick="hamburgerMenu()" tabindex="0" aria-label="Menu Button">
+          <span class="burger-bar" id="burger-bar1"></span>
+          <span class="burger-bar" id="burger-bar2"></span>
+          <span class="burger-bar" id="burger-bar3"></span>
+        </button>
+      </div>
+    </div>
   </nav>
+
+  <div class="mobiletogglemenu" id="mobiletogglemenu">
+    <ul class="mobile-navbar-tabs-ul" id="mobile-ul">
+      <li class="mobile-navbar-tabs-li" onclick="hidemenubyli()">
+        <a href="#demo" aria-label="Demo section">Demo</a>
+      </li>
+      <li class="mobile-navbar-tabs-li" onclick="hidemenubyli()">
+        <a href="#renderer" aria-label="Renderer section">Renderer</a>
+      </li>
+      <li class="mobile-navbar-tabs-li" onclick="hidemenubyli()">
+        <a href="#core" aria-label="Core section">Core</a>
+      </li>
+      <li class="mobile-navbar-tabs-li" onclick="hidemenubyli()">
+        <a href="#tech" aria-label="Tech section">Tech</a>
+      </li>
+      <li class="mobile-navbar-tabs-li" onclick="hidemenubyli()">
+        <a href="../#projects" aria-label="Back to Portfolio">Portfolio</a>
+      </li>
+    </ul>
+  </div>
 
   <main class="pp" id="main-content">
     <div class="pp-hero">
@@ -242,6 +271,40 @@
       <a href="../#projects">&larr; Back to Portfolio</a>
     </footer>
   </main>
+  <button class="fas" id="backtotopbutton" onclick="scrolltoTopfunction()" aria-label="Back to top">
+    <span>&#8592;BACK TO TOP</span>
+  </button>
+  <script>
+    var preventScroll = function (e) { e.preventDefault(); };
+    var mybutton = document.getElementById("backtotopbutton");
+    function scrolltoTopfunction() { window.scrollTo({ top: 0, behavior: "smooth" }); }
+    window.addEventListener("scroll", function () {
+      mybutton.style.display = document.documentElement.scrollTop > 400 ? "block" : "none";
+    });
+    function hamburgerMenu() {
+      if (!document.body.classList.contains("stopscrolling")) {
+        document.addEventListener("touchmove", preventScroll, { passive: false });
+        document.addEventListener("wheel", preventScroll, { passive: false });
+      } else {
+        document.removeEventListener("touchmove", preventScroll);
+        document.removeEventListener("wheel", preventScroll);
+      }
+      document.body.classList.toggle("stopscrolling");
+      document.getElementById("mobiletogglemenu").classList.toggle("show-toggle-menu");
+      document.getElementById("burger-bar1").classList.toggle("hamburger-animation1");
+      document.getElementById("burger-bar2").classList.toggle("hamburger-animation2");
+      document.getElementById("burger-bar3").classList.toggle("hamburger-animation3");
+    }
+    function hidemenubyli() {
+      document.removeEventListener("touchmove", preventScroll);
+      document.removeEventListener("wheel", preventScroll);
+      document.body.classList.remove("stopscrolling");
+      document.getElementById("mobiletogglemenu").classList.remove("show-toggle-menu");
+      document.getElementById("burger-bar1").classList.remove("hamburger-animation1");
+      document.getElementById("burger-bar2").classList.remove("hamburger-animation2");
+      document.getElementById("burger-bar3").classList.remove("hamburger-animation3");
+    }
+  </script>
   <script src="../js/aos.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {

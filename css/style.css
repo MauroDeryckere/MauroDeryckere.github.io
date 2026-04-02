@@ -355,7 +355,10 @@ noscript {
     justify-content: space-between;
     z-index: 999;
     border: 1px solid var(--color-navbarBorder-dark);
-    border-radius: 50px
+    border-radius: 50px;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%)
 }
 
 .navbar-tabs,
@@ -372,7 +375,7 @@ noscript {
 
 .navbar-tabs {
     display: flex;
-    width: 80%
+    flex: 1
 }
 
 .navbar-tabs-ul {
@@ -444,6 +447,19 @@ noscript {
     align-items: center;
     display: flex
 }
+
+.nav-logo {
+    font-family: "Fira Code", monospace;
+    font-size: 1.5rem;
+    color: var(--color-white);
+    text-decoration: none;
+    white-space: nowrap;
+    font-weight: 300;
+    letter-spacing: .5px;
+    transition: opacity .2s ease;
+}
+
+.nav-logo:hover { opacity: .7; }
 
 .hey {
     color: var(--color-white);
@@ -579,7 +595,7 @@ noscript {
 
 .landing-page-container {
     width: 100%;
-    height: calc(100vh - 115px);
+    height: calc(100vh - 110px);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1794,15 +1810,13 @@ footer {
     }
 
     .hamburger {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 115px;
+        position: static;
+        width: auto;
+        height: auto;
         display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        z-index: 9998;
-        background: linear-gradient(to bottom, var(--color-dark-mode) 60%, transparent)
+        align-items: center;
+        z-index: auto;
+        background: none
     }
 
     .burger-bar,
@@ -1813,12 +1827,11 @@ footer {
     }
 
     .hamburgerbase {
-        width: 80%;
-        height: 80px;
+        width: auto;
+        height: auto;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
-        padding: 20px
+        padding: 0
     }
 
     #hamburger-button {
@@ -1926,6 +1939,7 @@ footer {
     .show-toggle-menu .mobile-navbar-tabs-li:nth-child(2) { transition-delay: .1s }
     .show-toggle-menu .mobile-navbar-tabs-li:nth-child(3) { transition-delay: .15s }
     .show-toggle-menu .mobile-navbar-tabs-li:nth-child(4) { transition-delay: .2s }
+    .show-toggle-menu .mobile-navbar-tabs-li:nth-child(5) { transition-delay: .25s }
 
     .mobile-navbar-tabs-li a {
         padding: 15px 20px;
@@ -2085,9 +2099,7 @@ footer {
     }
 
     #hamburger {
-        margin-right: 20px;
-        height: 115px;
-        align-items: flex-end
+        margin-right: 0
     }
 
     #hello-friend,
@@ -2265,9 +2277,9 @@ code {
    ================================================ */
 
 .pp {
-    max-width: 860px;
+    width: 60%;
     margin: 0 auto;
-    padding: 80px 24px 80px;
+    padding: 115px 0 80px;
     color: var(--color-gray);
     font-size: 2rem;
     line-height: 1.7;
@@ -2279,17 +2291,20 @@ code {
 /* ---- Project Page Navbar ---- */
 .pp-nav {
     position: fixed;
-    top: 0; left: 0; right: 0;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
     z-index: 999;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 32px;
+    padding: 0 20px;
     height: 80px;
     background-image: linear-gradient(to bottom right, var(--tech-stack-box-first-color), var(--tech-stack-box-second-color));
     backdrop-filter: blur(10px);
     border: 1px solid var(--color-navbarBorder-dark);
-    border-radius: 0 0 20px 20px;
+    border-radius: 50px;
 }
 
 .pp-nav-logo {
@@ -2582,15 +2597,20 @@ code {
 /* ---- Responsive ---- */
 @media screen and (max-width: 998px) {
     .pp-features { grid-template-columns: 1fr; }
-    .pp-nav-links { gap: 4px; }
+    .pp-nav-links { display: none; }
+}
+
+@media screen and (max-width: 998px) {
+    .pp { width: 80%; }
 }
 
 @media screen and (max-width: 768px) {
-    .pp { padding: 70px 16px 60px; }
+    .pp { padding: 100px 0 60px; }
     .pp-hero { padding-top: 48px; }
-    .pp-nav { padding: 0 16px; height: 70px; }
+    .pp-nav { padding: 0 16px; height: 70px; width: 90%; }
 }
 
 @media screen and (max-width: 500px) {
-    .pp-nav { height: 70px; }
+    .pp { width: 90%; }
+    .pp-nav { height: 70px; width: 95%; }
 }

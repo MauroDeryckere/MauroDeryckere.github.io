@@ -72,7 +72,7 @@
     <div class="cursor-outer" id="cursor-outer"></div>
 
     <div class="navbar" id="navbar">
-      <div class="hey">Hi!</div>
+      <a href="#home" class="nav-logo">Mauro Deryckere</a>
       <div class="navbar-tabs" id="navbar-tabs">
         <ul class="navbar-tabs-ul">
           <li class="home activeThistab navbar-tabs-li">
@@ -98,22 +98,20 @@
         </ul>
       </div>
       <!-- navbar tabs ends -->
+      <div class="hamburger" id="hamburger">
+        <div class="hamburgerbase">
+          <button id="hamburger-button" onclick="hamburgerMenu()" tabindex="0" aria-label="Menu Button">
+            <span class="burger-bar" id="burger-bar1"></span>
+            <span class="burger-bar" id="burger-bar2"></span>
+            <span class="burger-bar" id="burger-bar3"></span>
+          </button>
+        </div>
+      </div>
     </div>
   </header>
   <!-- header ends here -->
 
   <main id="main-content">
-    <!-- hamburger -->
-    <div class="hamburger" id="hamburger">
-      <div class="hamburgerbase">
-        <button id="hamburger-button" onclick="hamburgerMenu()" tabindex="0" aria-label="Menu Button">
-          <span class="burger-bar" id="burger-bar1"></span>
-          <span class="burger-bar" id="burger-bar2"></span>
-          <span class="burger-bar" id="burger-bar3"></span>
-        </button>
-      </div>
-    </div>
-    <!-- hamburger -->
     <div class="mobiletogglemenu" id="mobiletogglemenu">
       <ul class="mobile-navbar-tabs-ul" id="mobile-ul">
         <li id="home-mobile-tab" class="mobile-navbar-tabs-li home activeThismobiletab" onclick="hidemenubyli()">
