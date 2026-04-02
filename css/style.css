@@ -2576,14 +2576,17 @@ code {
 .pp-footer a { font-size: 1.4rem; }
 
 /* ---- Responsive ---- */
-@media (max-width: 700px) {
+@media screen and (max-width: 998px) {
+    .pp-features { grid-template-columns: 1fr; }
+    .pp-nav-links { gap: 4px; }
+}
+
+@media screen and (max-width: 768px) {
     .pp { padding: 70px 16px 60px; }
     .pp-hero { padding-top: 48px; }
-    .pp-hero h1 { font-size: 3.2rem; }
-    .pp-hero .lead { font-size: 1.7rem; }
-    .pp-hero .intro { font-size: 1.35rem; }
-    .pp-features { grid-template-columns: 1fr; }
     .pp-nav { padding: 0 16px; height: 70px; }
-    .pp-nav-links { gap: 4px; }
-    .pp-nav-links a { font-size: 1.3rem; }
+}
+
+@media screen and (max-width: 500px) {
+    .pp-nav { height: 70px; }
 }
