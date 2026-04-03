@@ -476,10 +476,13 @@ noscript {
 
 #hello-friend,
 #work,
-.about-info p,
 .activeThistab,
 .language-speak article {
     color: var(--color-white)
+}
+
+.about-info p {
+    color: var(--color-ddd-color)
 }
 
 .blob,
