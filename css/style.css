@@ -2406,7 +2406,7 @@ code {
     margin: 0 0 32px;
 }
 
-.pp-hero .project-tags { margin: 24px 0; }
+.pp-hero .project-tags { margin: 10px 0 24px; }
 
 .pp-hero .project-buttons {
     display: flex;
@@ -2654,9 +2654,6 @@ code {
 
     .github-redirect:hover img { filter: brightness(2); }
 
-    .cta:hover span { color: var(--color-light-blue); }
-    .cta:hover svg { stroke: var(--color-light-blue); transform: translateX(-5px); }
-    .cta:hover::before { width: 45px; }
 
     #backtotopbutton:hover { transform: none; }
 
@@ -2679,6 +2676,11 @@ code {
     .pp-roadmap li:hover { color: var(--color-text-muted); padding-left: 0; }
 
     /* Active states for tap feedback */
+    .letsTalkBtn:active { transform: translateY(-2px) translateX(-2px); }
+    .letsTalkBtn:active .letsTalkBtn-BG { transform: translateY(2px) translateX(2px); }
+    .resume-btn:active { width: 130px; border-radius: 40px; }
+    .resume-btn:active .sign { width: 30%; padding-left: 20px; }
+    .resume-btn:active .text { opacity: 1; width: 70%; padding-right: 10px; }
     .filter-btn:active { border-color: var(--color-purple); color: var(--color-white); }
     .show-more-btn:active { border-color: var(--color-purple); background: rgba(128, 0, 255, 0.1); }
     .project-box:active { border-color: rgba(128, 0, 255, 0.3); box-shadow: 0 8px 30px rgba(128, 0, 255, 0.08); }
