@@ -2654,6 +2654,9 @@ code {
 
     .github-redirect:hover img { filter: brightness(2); }
 
+    .cta:hover span { color: var(--color-light-blue); }
+    .cta:hover svg { stroke: var(--color-light-blue); transform: translateX(-5px); }
+    .cta:hover::before { width: 45px; }
 
     #backtotopbutton:hover { transform: none; }
 
@@ -2676,6 +2679,9 @@ code {
     .pp-roadmap li:hover { color: var(--color-text-muted); padding-left: 0; }
 
     /* Active states for tap feedback */
+    .cta:active span { color: var(--color-white); }
+    .cta:active svg { stroke: white; transform: translateX(0); }
+    .cta:active::before { width: 100%; }
     .letsTalkBtn:active { transform: translateY(-2px) translateX(-2px); }
     .letsTalkBtn:active .letsTalkBtn-BG { transform: translateY(2px) translateX(2px); }
     .resume-btn:active { width: 130px; border-radius: 40px; }
