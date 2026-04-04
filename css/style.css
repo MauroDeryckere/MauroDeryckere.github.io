@@ -2406,7 +2406,7 @@ code {
     margin: 0 0 32px;
 }
 
-.pp-hero .project-tags { margin-top: 24px; }
+.pp-hero .project-tags { margin: 24px 0; }
 
 .pp-hero .project-buttons {
     display: flex;
