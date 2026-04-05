@@ -1805,8 +1805,6 @@ footer {
     }
 
     .blob,
-    .cursor-inner,
-    .cursor-outer,
     .navbar-tabs-ul {
         display: none
     }
