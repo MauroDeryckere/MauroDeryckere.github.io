@@ -1813,12 +1813,12 @@ footer {
     }
 
     .hamburger {
-        position: static;
+        position: relative;
         width: auto;
         height: auto;
         display: flex;
         align-items: center;
-        z-index: auto;
+        z-index: 9995;
         background: none
     }
 
@@ -2298,7 +2298,7 @@ code {
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
-    z-index: 9991;
+    z-index: 999;
     display: flex;
     align-items: center;
     justify-content: space-between;
