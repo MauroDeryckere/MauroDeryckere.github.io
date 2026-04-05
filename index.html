@@ -807,5 +807,19 @@
       render();
     })();
   </script>
+  <script>
+    (function () {
+      if (!('ontouchstart' in window)) return;
+      var touching = false;
+      function clearHover() {
+        document.body.style.pointerEvents = 'none';
+        requestAnimationFrame(function () { document.body.style.pointerEvents = ''; });
+      }
+      document.addEventListener('touchstart', function () { touching = true; }, { passive: true });
+      document.addEventListener('touchend', function () { touching = false; clearHover(); }, { passive: true });
+      document.addEventListener('touchcancel', function () { touching = false; clearHover(); }, { passive: true });
+      window.addEventListener('scroll', function () { if (touching) clearHover(); }, { passive: true });
+    })();
+  </script>
 </body>
 </html>

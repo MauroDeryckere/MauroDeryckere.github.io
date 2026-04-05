@@ -2791,12 +2791,10 @@ code {
 }
 
 /* ================================================
-   Touch devices: disable sticky hover states
+   Touch devices: disable decorative hovers only
+   Interactive hover feedback is cleared via JS on touchend
    ================================================ */
 @media (hover: none) {
-    .navbar-tabs-ul li:hover::before { opacity: 0; }
-    .navbar-tabs-ul li:hover { opacity: 1; }
-    .nav-logo:hover { opacity: 1; }
     .logo:hover { transform: none; }
 
     .jello:hover {
@@ -2806,68 +2804,10 @@ code {
         animation: none;
     }
 
-    .letsTalkBtn:hover { transform: none; }
-    .letsTalkBtn:hover .letsTalkBtn-BG { transform: none; }
-
-    .resume-btn:hover { width: 45px; border-radius: 50%; }
-    .resume-btn:hover .sign { width: 100%; padding-left: 0; }
-    .resume-btn:hover .text { opacity: 0; width: 0%; }
-
     .dp:hover::after,
     .dp:hover::before { transform: none; }
 
-    .tech-stack-box:hover { transform: none; border-color: var(--tech-stack-box-border-color); }
     .tech-stack-box:hover .tooltip { opacity: 0; }
 
-    .filter-btn:hover { border-color: var(--tech-stack-box-border-color); color: var(--color-gray); }
-    .show-more-btn:hover { border-color: var(--tech-stack-box-border-color); background: transparent; }
-
-    .project-box:hover { transform: none; border-color: var(--tech-stack-box-border-color); box-shadow: none; }
-
-    .github-redirect:hover img { filter: brightness(2); }
-
-    .cta:hover span { color: var(--color-light-blue); }
-    .cta:hover svg { stroke: var(--color-light-blue); transform: translateX(-5px); }
-    .cta:hover::before { width: 45px; }
-
-    #backtotopbutton:hover { transform: none; }
-
-    .social-media-container a:hover {
-        box-shadow: 0 0 0 #8000ff inset;
-        border-color: var(--color-gray);
-    }
-    .social-media-container a:hover::before { transform: scale(0); }
-
     .mobile-navbar-tabs-li:hover::before { display: none; }
-
-    .pp a:hover { color: var(--color-light-purple); }
-    .pp-nav-logo:hover { opacity: 1; }
-    .pp-nav-links li:hover { opacity: 1; }
-    .pp-nav-links li:hover::before { opacity: 0; }
-    .pp figure:hover img { box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4); }
-    .pp-fcard:hover { border-color: var(--color-border); transform: none; box-shadow: none; }
-    .pp-fcard:hover::before { opacity: 0; }
-    .pp-tech li:hover { border-color: var(--color-border); color: var(--color-gray); background: rgba(128, 0, 255, 0.06); }
-    .pp-roadmap li:hover { color: var(--color-text-muted); padding-left: 0; }
-
-    /* Active states for tap feedback */
-    .cta:active span { color: var(--color-white); }
-    .cta:active svg { stroke: white; transform: translateX(0); }
-    .cta:active::before { width: 100%; }
-    .letsTalkBtn:active { transform: translateY(-2px) translateX(-2px); }
-    .letsTalkBtn:active .letsTalkBtn-BG { transform: translateY(2px) translateX(2px); }
-    .resume-btn:active { width: 130px; border-radius: 40px; }
-    .resume-btn:active .sign { width: 30%; padding-left: 20px; }
-    .resume-btn:active .text { opacity: 1; width: 70%; padding-right: 10px; }
-    .filter-btn:active { border-color: var(--color-purple); color: var(--color-white); }
-    .show-more-btn:active { border-color: var(--color-purple); background: rgba(128, 0, 255, 0.1); }
-    .project-box:active { border-color: rgba(128, 0, 255, 0.3); box-shadow: 0 8px 30px rgba(128, 0, 255, 0.08); }
-    .tech-stack-box:active { transform: scale(1.05); border-color: rgba(128, 0, 255, 0.4); }
-    .github-redirect:active img { filter: brightness(4); }
-    .social-media-container a:active { box-shadow: 0 0 50px 100px #8000ff inset; border-color: #8000ff; }
-    #backtotopbutton:active { transform: translate(0, -20px); }
-    .pp-fcard:active { border-color: rgba(128, 0, 255, 0.35); transform: translateY(-3px); }
-    .pp-fcard:active::before { opacity: 1; }
-    .pp-tech li:active { border-color: rgba(128, 0, 255, 0.3); color: var(--color-white); background: rgba(128, 0, 255, 0.1); }
-    .pp-roadmap li:active { color: var(--color-gray); padding-left: 6px; }
 }
