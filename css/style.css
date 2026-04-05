@@ -2857,3 +2857,4 @@ code {
 .pp-fcard.touch-hover::before { opacity: 1; }
 .pp-tech li.touch-hover { border-color: rgba(128, 0, 255, 0.3); color: var(--color-white); background: rgba(128, 0, 255, 0.1); }
 .pp-roadmap li.touch-hover { color: var(--color-gray); padding-left: 6px; }
+.pp figure.touch-hover img { box-shadow: 0 8px 40px rgba(128, 0, 255, 0.15); }
