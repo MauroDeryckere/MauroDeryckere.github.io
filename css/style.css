@@ -390,7 +390,7 @@ noscript {
     display: flex;
     list-style: none;
     justify-content: flex-end;
-    gap: 80px;
+    gap: clamp(20px, 4vw, 80px);
     color: var(--color-white)
 }
 
@@ -2334,7 +2334,7 @@ code {
 
 .pp-nav-links {
     display: flex;
-    gap: 80px;
+    gap: clamp(20px, 4vw, 80px);
     list-style: none;
     margin: 0;
     padding: 0;
