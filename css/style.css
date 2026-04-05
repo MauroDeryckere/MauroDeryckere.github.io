@@ -2325,7 +2325,7 @@ code {
 
 .pp-nav-links {
     display: flex;
-    gap: 8px;
+    gap: 80px;
     list-style: none;
     margin: 0;
     padding: 0;
