@@ -439,6 +439,7 @@
 
       var preventScroll = function (e) {
         if (e.touches && e.touches.length > 1) return;
+        if (scale > 1 && e.target === lbImg) return;
         e.preventDefault();
       };
 
@@ -509,6 +510,33 @@
         isDragging = false;
         if (scale > 1) lbImg.style.cursor = 'grab';
       });
+
+      /* Touch drag to pan */
+      lbImg.addEventListener('touchstart', function (e) {
+        if (scale <= 1 || e.touches.length !== 1) return;
+        isDragging = true;
+        hasDragged = false;
+        dragStartX = e.touches[0].clientX;
+        dragStartY = e.touches[0].clientY;
+        dragStartPX = panX;
+        dragStartPY = panY;
+      }, { passive: true });
+
+      lbImg.addEventListener('touchmove', function (e) {
+        if (!isDragging || e.touches.length !== 1) return;
+        var dx = e.touches[0].clientX - dragStartX;
+        var dy = e.touches[0].clientY - dragStartY;
+        if (Math.abs(dx) > 3 || Math.abs(dy) > 3) hasDragged = true;
+        panX = dragStartPX + dx / scale;
+        panY = dragStartPY + dy / scale;
+        clampPan();
+        applyTransform(false);
+        e.preventDefault();
+      }, { passive: false });
+
+      lbImg.addEventListener('touchend', function () {
+        isDragging = false;
+      }, { passive: true });
 
       /* Click to toggle zoom */
       lbImg.addEventListener('click', function (e) {
