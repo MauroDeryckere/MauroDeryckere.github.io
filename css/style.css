@@ -2839,6 +2839,7 @@ code {
 /* Touch hover feedback via JS class */
 .project-box.touch-hover { transform: translateY(-4px); border-color: rgba(128, 0, 255, 0.3); box-shadow: 0 8px 30px rgba(128, 0, 255, 0.08); }
 .tech-stack-box.touch-hover { transform: scale(1.05); border-color: rgba(128, 0, 255, 0.4); }
+.tech-stack-box.touch-hover .tooltip { opacity: 1; transition-duration: .3s; }
 .filter-btn.touch-hover { border-color: var(--color-purple); color: var(--color-white); }
 .show-more-btn.touch-hover { border-color: var(--color-purple); background: rgba(128, 0, 255, 0.1); }
 .github-redirect.touch-hover img { filter: brightness(4); }
