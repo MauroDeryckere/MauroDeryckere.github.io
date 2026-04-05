@@ -322,8 +322,10 @@
       if (!('ontouchstart' in window)) return;
       var touching = false;
       function clearHover() {
-        document.body.style.pointerEvents = 'none';
-        requestAnimationFrame(function () { document.body.style.pointerEvents = ''; });
+        setTimeout(function () {
+          document.body.style.pointerEvents = 'none';
+          requestAnimationFrame(function () { document.body.style.pointerEvents = ''; });
+        }, 100);
       }
       document.addEventListener('touchstart', function () { touching = true; }, { passive: true });
       document.addEventListener('touchend', function () { touching = false; clearHover(); }, { passive: true });
