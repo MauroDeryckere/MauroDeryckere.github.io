@@ -36,6 +36,8 @@
 </head>
 
 <body class="body">
+  <div class="cursor-inner" id="cursor-inner"></div>
+  <div class="cursor-outer" id="cursor-outer"></div>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <nav class="pp-nav" aria-label="Page navigation">
     <a href="../" class="pp-nav-logo">Mauro Deryckere</a>
@@ -611,6 +613,31 @@
         }
       });
     })();
+  </script>
+  <script>
+    const cursorInner = document.getElementById("cursor-inner");
+    const cursorOuter = document.getElementById("cursor-outer");
+    const links = document.querySelectorAll("a,label,button");
+
+    document.addEventListener("mousemove", function (e) {
+      cursorInner.style.left = e.clientX + "px";
+      cursorInner.style.top = e.clientY + "px";
+      cursorOuter.animate(
+        { left: e.clientX + "px", top: e.clientY + "px" },
+        { duration: 500, fill: "forwards" }
+      );
+    });
+
+    links.forEach(function (link) {
+      link.addEventListener("mouseenter", function () {
+        cursorInner.classList.add("hover");
+        cursorOuter.classList.add("hover");
+      });
+      link.addEventListener("mouseleave", function () {
+        cursorInner.classList.remove("hover");
+        cursorOuter.classList.remove("hover");
+      });
+    });
   </script>
 </body>
 
