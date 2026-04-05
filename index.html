@@ -814,17 +814,27 @@
       function clearAll() {
         document.querySelectorAll('.touch-hover').forEach(function (el) { el.classList.remove('touch-hover'); });
       }
-      document.addEventListener('touchstart', function (e) {
-        clearAll();
+      function addHover(e) {
         var el = e.target;
         while (el && el !== document) {
           if (el.matches && el.matches(targets)) el.classList.add('touch-hover');
           el = el.parentElement;
         }
+      }
+      document.addEventListener('touchstart', function (e) {
+        clearAll();
+        addHover(e);
+      }, { passive: true });
+      document.addEventListener('touchmove', function (e) {
+        var t = e.touches[0];
+        var el = document.elementFromPoint(t.clientX, t.clientY);
+        var active = document.querySelectorAll('.touch-hover');
+        active.forEach(function (hovered) {
+          if (!hovered.contains(el)) hovered.classList.remove('touch-hover');
+        });
       }, { passive: true });
       document.addEventListener('touchend', clearAll, { passive: true });
       document.addEventListener('touchcancel', clearAll, { passive: true });
-      window.addEventListener('scroll', clearAll, { passive: true });
     })();
   </script>
 </body>
