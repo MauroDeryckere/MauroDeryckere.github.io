@@ -1852,9 +1852,13 @@ footer {
         border: none;
         display: flex;
         flex-direction: column;
+        transition: opacity .2s ease;
+        cursor: pointer;
         align-items: center;
         justify-content: space-between
     }
+
+    #hamburger-button:hover { opacity: .7; }
 
     #burger-bar1,
     #burger-bar2,
