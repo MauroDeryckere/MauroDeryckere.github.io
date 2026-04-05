@@ -810,17 +810,21 @@
   <script>
     (function () {
       if (!('ontouchstart' in window)) return;
-      var touching = false;
-      function clearHover() {
-        setTimeout(function () {
-          document.body.style.pointerEvents = 'none';
-          requestAnimationFrame(function () { document.body.style.pointerEvents = ''; });
-        }, 100);
+      var targets = '.project-box, .tech-stack-box, .filter-btn, .show-more-btn, .cta, .social-media-container a, .letsTalkBtn, .resume-btn, .github-redirect, #backtotopbutton';
+      function clearAll() {
+        document.querySelectorAll('.touch-hover').forEach(function (el) { el.classList.remove('touch-hover'); });
       }
-      document.addEventListener('touchstart', function () { touching = true; }, { passive: true });
-      document.addEventListener('touchend', function () { touching = false; clearHover(); }, { passive: true });
-      document.addEventListener('touchcancel', function () { touching = false; clearHover(); }, { passive: true });
-      window.addEventListener('scroll', function () { if (touching) clearHover(); }, { passive: true });
+      document.addEventListener('touchstart', function (e) {
+        clearAll();
+        var el = e.target;
+        while (el && el !== document) {
+          if (el.matches && el.matches(targets)) el.classList.add('touch-hover');
+          el = el.parentElement;
+        }
+      }, { passive: true });
+      document.addEventListener('touchend', clearAll, { passive: true });
+      document.addEventListener('touchcancel', clearAll, { passive: true });
+      window.addEventListener('scroll', clearAll, { passive: true });
     })();
   </script>
 </body>
