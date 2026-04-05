@@ -159,6 +159,13 @@ html {
     transition-duration: .5s
 }
 
+@media (hover: none) {
+    .cursor-inner,
+    .cursor-outer {
+        display: none
+    }
+}
+
 .cursor-inner.hover {
     width: 25px;
     height: 25px;
