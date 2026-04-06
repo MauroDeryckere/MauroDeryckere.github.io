@@ -638,6 +638,17 @@
         cursorOuter.classList.remove("hover");
       });
     });
+
+    document.querySelectorAll(".pp-video").forEach(function (video) {
+      video.addEventListener("mouseenter", function () {
+        cursorInner.style.opacity = "0";
+        cursorOuter.style.opacity = "0";
+      });
+      video.addEventListener("mouseleave", function () {
+        cursorInner.style.opacity = "";
+        cursorOuter.style.opacity = "";
+      });
+    });
   </script>
 </body>
 
